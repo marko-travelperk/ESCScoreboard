@@ -4,6 +4,13 @@ import FlipMove from "react-flip-move";
 
 
 class ScoreboardComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {"twelves": false}
+    }
+    switchTwelveState(){
+        this.setState({"twelves": !this.state.twelves})
+    }
 
     render(){
         if (!this.props.ranking || !this.props.ranking.length){
@@ -11,7 +18,8 @@ class ScoreboardComponent extends Component {
         }
         const limit = Math.trunc(this.props.ranking.length/2)
         return(
-            <FlipMove enterAnimation="elevator" >
+            <div>
+                <FlipMove enterAnimation="elevator" >
                 {this.props.ranking
                     .sort((a,b) => {
                         if (!a.averageRank || !b.averageRank){
@@ -35,11 +43,14 @@ class ScoreboardComponent extends Component {
                     map(
                     (value, index) => {
                         return (
-                            <RankCountryComponent className={''} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank}/>
+                            <RankCountryComponent className={``} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank} twelvePointRank={value.twelvePointRank} use12P={this.state.twelves}/>
                         )
                     }
                 )}
             </FlipMove>
+                <br/>
+            <button onClick={this.switchTwelveState.bind(this)}>Use 12p system</button>
+            </div>
         )
     }
 

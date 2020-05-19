@@ -17,9 +17,17 @@ export default class RankCountryComponent extends Component {
                 <span className={"country__name"}>
                     {countryNameMap[this.props.country.toLowerCase()]}
                 </span>
-                <span className={"country__average"}>
-                    {this.props.averageRank.toFixed(2)}
-                </span>
+                {
+                    this.props.use12P
+                            ?
+                        <span className={"country__average"}>
+                            {this.props.twelvePointRank}
+                        </span>
+                            :
+                        <span className={"country__average"}>
+                            {this.props.averageRank.toFixed(2)}
+                        </span>
+                }
             </div>
         )
     }

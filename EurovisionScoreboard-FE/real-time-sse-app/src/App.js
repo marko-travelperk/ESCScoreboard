@@ -3,7 +3,7 @@ import './App.css';
 import NameComponent from "./NameComponent";
 import OngoingRankComponent from "./OngoingRankComponent";
 import ScoreboardComponent from "./ScoreboardComponent";
-import {countryNameMap, countries} from "./constants";
+import {countryNameMap, countries, rankToPointsMap} from "./constants";
 
 class App extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class App extends Component {
         this.state = {
             "overallRanking":initial,
             "currentVoting": {},
-            "currentVoter": "Marko"
+            "currentVoter": ""
         }
         this.eventSource = new EventSource("http://localhost:5000/stream");
 
@@ -64,8 +64,9 @@ class App extends Component {
         for (var country in this.state.overallRanking){
             const arrayOfVotes = this.state.overallRanking[country]
             const sum = arrayOfVotes.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            const twelvePointSum = arrayOfVotes.reduce((a, b) => rankToPointsMap[a] || 0 + rankToPointsMap[b] || 0, 0);
             const avg = (sum / arrayOfVotes.length) || 0;
-            ranking.push({"country": country, "averageRank": avg})
+            ranking.push({"country": country, "averageRank": avg, "twelvePointRank": twelvePointSum})
         }
         return ranking
     }
