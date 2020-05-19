@@ -83,6 +83,9 @@ class App extends Component {
         console.log(this.state.overallRanking)
     return (
       <div className="App">
+          <div className={"Logo"}>
+            <img src={require('./img/logo.svg')} />
+          </div>
           <div className={"Scoreboard"}>
             <ScoreboardComponent ranking={this.getRanking()}/>
           </div>
@@ -92,7 +95,7 @@ class App extends Component {
                 <OngoingRankComponent ranking={this.state.currentVoting} />
             </div>
           </div>
-          <button onClick={this.addRandomVote.bind(this)}>Random vote</button>
+          <button className={"Random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
       </div>
     );
   }

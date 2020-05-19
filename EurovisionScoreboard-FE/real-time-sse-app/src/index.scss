@@ -21,13 +21,20 @@ body {
   background-color: darken($color-primary, 10%);
 } 
 
+.Logo {
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+  padding: 48px 48px 0;
+}
+
 .country {
   text-align: left;
   flex-grow: 1;
   color: white;
   background-color: $color-primary;
   margin: 2px;
-  padding: 0 8px;
+  padding: 2px 8px;
   width: 100%;
   font-size: 16px;
   &--small {
@@ -54,7 +61,7 @@ body {
     margin-right: 16px;
     img {
       display: block;
-      width: 32px;
+      width: 28px;
       height: 24px;
     }
   }
@@ -82,4 +89,10 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.Button {
+  position: fixed;
+  top: 48px;
+  left: 48px;
 }
