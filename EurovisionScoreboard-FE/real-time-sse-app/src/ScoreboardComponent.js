@@ -22,6 +22,9 @@ class ScoreboardComponent extends Component {
                 <FlipMove enterAnimation="elevator" >
                 {this.props.ranking
                     .sort((a,b) => {
+                        if (this.state.twelves){
+                            return b.twelvePointRank - a.twelvePointRank
+                        }
                         if (!a.averageRank || !b.averageRank){
                             return b.averageRank - a.averageRank
                         }
@@ -32,7 +35,6 @@ class ScoreboardComponent extends Component {
                             const key = index >= limit ? (index +1 - limit) * 2 : (index+1) * 2 - 1
                             value["key"] = key
                             value["rank"] = index+1
-                            console.log(value.country + "key " + key + "index " + index + " rank " + value.rank)
 
                             return value
                         }

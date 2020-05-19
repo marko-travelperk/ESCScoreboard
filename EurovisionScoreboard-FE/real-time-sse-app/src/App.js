@@ -64,7 +64,9 @@ class App extends Component {
         for (var country in this.state.overallRanking){
             const arrayOfVotes = this.state.overallRanking[country]
             const sum = arrayOfVotes.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-            const twelvePointSum = arrayOfVotes.reduce((a, b) => rankToPointsMap[a] || 0 + rankToPointsMap[b] || 0, 0);
+            let twelvePointSum = 0
+            arrayOfVotes.forEach( x => twelvePointSum += rankToPointsMap[x])
+            console.log("points "+ arrayOfVotes + " 12p sum " + twelvePointSum)
             const avg = (sum / arrayOfVotes.length) || 0;
             ranking.push({"country": country, "averageRank": avg, "twelvePointRank": twelvePointSum})
         }
