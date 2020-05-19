@@ -11,13 +11,7 @@ class ScoreboardComponent extends Component {
         }
         const limit = Math.trunc(this.props.ranking.length/2)
         return(
-            <FlipMove
-                staggerDelayBy={100}
-                staggerDurationBy={10}
-                easing={"linear"}
-                typeName={null}
-                appearAnimation="accordionVertical"
-                enterAnimation="fade" leaveAnimation="fade" >
+            <FlipMove enterAnimation="elevator" >
                 {this.props.ranking
                     .sort((a,b) => {
                         if (!a.averageRank || !b.averageRank){
@@ -39,7 +33,7 @@ class ScoreboardComponent extends Component {
                     ).map(
                     (value, index) => {
                         return (
-                            <RankCountryComponent className={`list-item card grid`} key={value.key} country={value.country} rank={value.rank} averageRank={value.averageRank}/>
+                            <RankCountryComponent className={''} key={value.key} country={value.country} rank={value.rank} averageRank={value.averageRank}/>
                         )
                     }
                 )}

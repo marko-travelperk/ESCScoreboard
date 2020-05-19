@@ -82,12 +82,14 @@ class App extends Component {
         console.log(this.state.overallRanking)
     return (
       <div className="App">
-          <div className={"leftallign vertical-center"}>
-              <ScoreboardComponent ranking={this.getRanking()}/>
+          <div className={"Scoreboard"}>
+            <ScoreboardComponent ranking={this.getRanking()}/>
           </div>
-          <div className={"right"}>
-          <NameComponent voterName={this.state.currentVoter}/>
-          <OngoingRankComponent ranking={this.state.currentVoting} />
+          <div className={"Voting"}>
+            <NameComponent voterName={this.state.currentVoter}/>
+            <div className={"Ranking"}>
+                <OngoingRankComponent ranking={this.state.currentVoting} />
+            </div>
           </div>
           <button onClick={this.addRandomVote.bind(this)}>Random vote</button>
       </div>

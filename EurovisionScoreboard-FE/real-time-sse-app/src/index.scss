@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'GothamBold';
+  src: url('fonts/GothamBold.otf');
+}
+
+$color-primary: #0E1B80;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: GothamBold;
+}
+
+.App {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  background-color: darken($color-primary, 10%);
+} 
+
+.country {
+  text-align: left;
+  flex-grow: 1;
+  color: white;
+  background-color: $color-primary;
+  margin: 2px;
+  padding: 8px;
+  width: 100%;
+  font-size: 24px;
+  &--small {
+    position: relative;
+    font-size: 12px;
+    padding: 4px;
+  }
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  &__rank {
+    width: 32px;
+    margin-right: 16px;
+    text-align: center;
+  }
+  &__flag {
+    margin-right: 16px;
+    img {
+      max-width: 32px;
+      display: block;
+    }
+  }
+  &__average {
+    margin-left: auto;
+  }
+}
+
+.Scoreboard {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  align-content: flex-start;
+}
+
+.Voting {
+  width: 50%;
+}
+
+.Ranking {
+  display: flex;
+  flex-flow: row wrap;
+}

@@ -12,7 +12,3 @@ const images = importAll(require.context('./flags', false, /\.(png|jpe?g|svg)$/)
 export function getFlagForCountry(country){
     return images[countryFlagMap[country.toLowerCase()]]
 }
-
-export function getSmallFlagForCountry(country){
-    return images["24p_"+countryFlagMap[country.toLowerCase()]]
-}
