@@ -1,4 +1,4 @@
-const countries = [
+export const countries = [
     "Iceland",
     "Turkey",
     "Bosnia and Herzegovina",
@@ -38,7 +38,6 @@ export const countryNameMap = {
     "bulgaria":"Bulgaria",
     "belgium": "Belgium",
     "czech republic":"Czech Republic",
-    "serbia": "Serbia"
 }
 
 export const countryFlagMap = {

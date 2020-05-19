@@ -3,7 +3,7 @@ import './App.css';
 import NameComponent from "./NameComponent";
 import OngoingRankComponent from "./OngoingRankComponent";
 import ScoreboardComponent from "./ScoreboardComponent";
-import {countryNameMap} from "./constants";
+import {countryNameMap, countries} from "./constants";
 
 class App extends Component {
     constructor(props) {
@@ -70,6 +70,14 @@ class App extends Component {
         return ranking
     }
 
+    addRandomVote(){
+        const votes = this.state.currentVoting
+        const country = countries[Math.floor(Math.random() * countries.length)].toLowerCase()
+        const rank = Math.floor(Math.random() * 50)+1
+        this.addVote({"country": country, "new_rank": rank})
+        this.setState({"currentVoting": votes})
+    }
+
     render() {
         console.log(this.state.overallRanking)
     return (
@@ -81,6 +89,7 @@ class App extends Component {
           <NameComponent voterName={this.state.currentVoter}/>
           <OngoingRankComponent ranking={this.state.currentVoting} />
           </div>
+          <button onClick={this.addRandomVote.bind(this)}>Random vote</button>
       </div>
     );
   }

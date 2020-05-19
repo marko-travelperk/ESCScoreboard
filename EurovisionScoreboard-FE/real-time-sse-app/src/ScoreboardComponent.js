@@ -12,7 +12,7 @@ class ScoreboardComponent extends Component {
         const limit = Math.trunc(this.props.ranking.length/2)
         return(
             <FlipMove
-                staggerDelayBy={50}
+                staggerDelayBy={100}
                 staggerDurationBy={10}
                 easing={"linear"}
                 typeName={null}
