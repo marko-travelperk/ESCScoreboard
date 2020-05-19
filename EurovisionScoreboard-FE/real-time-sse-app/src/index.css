@@ -13,7 +13,6 @@ body {
 .App {
   display: flex;
   flex-flow: row wrap;
-  height: 100vh;
   background-color: #091152; }
 
 .country {
@@ -22,17 +21,20 @@ body {
   color: white;
   background-color: #0E1B80;
   margin: 2px;
-  padding: 8px;
+  padding: 0 8px;
   width: 100%;
-  font-size: 24px;
+  font-size: 16px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
 
 .country--small {
   position: relative;
-  font-size: 12px;
-  padding: 4px; }
+  font-size: 12px; }
+
+.country--small .country__flag img {
+  width: 24px;
+  height: 16px; }
 
 .country__rank {
   width: 32px;
@@ -43,21 +45,27 @@ body {
   margin-right: 16px; }
 
 .country__flag img {
-  max-width: 32px;
-  display: block; }
+  display: block;
+  width: 32px;
+  height: 24px; }
 
 .country__average {
   margin-left: auto; }
 
 .Scoreboard {
-  display: flex;
-  flex-flow: row wrap;
-  width: 50%;
-  align-content: flex-start; }
+  width: calc(100% / 3 * 2);
+  padding: 48px; }
+
+.Scoreboard > div {
+  columns: 2; }
 
 .Voting {
-  width: 50%; }
+  width: calc(100% / 3);
+  margin: 48px 0;
+  text-align: center;
+  color: white; }
 
 .Ranking {
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  justify-content: center; }
