@@ -36,11 +36,8 @@ body {
 
 .country--small {
   position: relative;
-  font-size: 12px; }
-
-.country--small .country__flag img {
-  width: 24px;
-  height: 16px; }
+  font-size: 12px;
+  padding: 4px; }
 
 .country__rank {
   width: 32px;
@@ -51,9 +48,8 @@ body {
   margin-right: 16px; }
 
 .country__flag img {
-  display: block;
-  width: 28px;
-  height: 24px; }
+  max-width: 32px;
+  display: block; }
 
 .country__average {
   margin-left: auto; }
