@@ -1,0 +1,67 @@
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url('fonts/GothamBold.otf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: GothamBold;
+}
+.telaviv {
+  display:inline-block;
+  font-size: 31px;
+  width:650px;
+  max-width:630px;
+  color:white;
+  position: relative;
+  background: linear-gradient(90deg, rgba(15,44,98,1) 0%, rgba(9,9,121,1) 19%, rgba(6,108,196,1) 100%);
+}
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.telavivcompact {
+  display:inline-block;
+  font-size: 20px;
+  width:400px;
+  max-width:400px;
+  color:white;
+  position: relative;
+  background: rgb(15,44,98);
+  background: linear-gradient(90deg, rgba(15,44,98,1) 0%, rgba(13,100,173,1) 25%, rgba(6,108,196,1) 100%);
+}
+
+.leftallign {
+  float:left;
+  width: 70%
+}
+.leftallignnum {
+  position: absolute;
+  left: 10px;
+}
+.leftallignflag {
+  position: absolute;
+  left: 70px;
+}
+.leftalligncountry {
+  position: absolute;
+  left: 125px;
+}
+.rightallign {
+  position: absolute;
+  right: 10px;
+}
+.right {
+  float:right;
+  text-align: center;
+
+  width: 30%
+}
+
+.grid {
+  display: inline-block;
+}
