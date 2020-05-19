@@ -34,7 +34,7 @@ body {
   color: white;
   background-color: $color-primary;
   margin: 2px;
-  padding: 0 8px;
+  padding: 2px 8px;
   width: 100%;
   font-size: 16px;
   &--small {
@@ -61,7 +61,7 @@ body {
     margin-right: 16px;
     img {
       display: block;
-      width: 32px;
+      width: 28px;
       height: 24px;
     }
   }
@@ -89,4 +89,10 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.Button {
+  position: fixed;
+  top: 48px;
+  left: 48px;
 }

@@ -94,7 +94,7 @@ class App extends Component {
                 <OngoingRankComponent ranking={this.state.currentVoting} />
             </div>
           </div>
-          <button onClick={this.addRandomVote.bind(this)}>Random vote</button>
+          <button className={"Random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
       </div>
     );
   }
