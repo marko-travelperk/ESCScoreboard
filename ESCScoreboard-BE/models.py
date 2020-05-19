@@ -53,4 +53,4 @@ class State:
 history: t.List[State] = []
 
 
-VOTERS = ["Marko", "Rinor", "Luke", "Simon"]
+VOTERS = ["Marko", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "FSE", "Hlynur"]
