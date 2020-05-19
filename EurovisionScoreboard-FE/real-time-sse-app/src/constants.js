@@ -17,6 +17,7 @@ export const countries = [
     "Bulgaria",
     "Belgium",
     "Czech Republic",
+    "Moldova"
 ]
 
 export const countryNameMap = {
@@ -38,6 +39,7 @@ export const countryNameMap = {
     "bulgaria":"Bulgaria",
     "belgium": "Belgium",
     "czech republic":"Czech Republic",
+    "moldova": "Moldova"
 }
 
 export const countryFlagMap = {
@@ -59,7 +61,8 @@ export const countryFlagMap = {
     "bulgaria": "BG.png",
     "belgium": "BE.png",
     "czech republic": "CZ.png",
-    "serbia": "RS.png"
+    "serbia": "RS.png",
+    "moldova": "MD.png"
 }
 
 export default countries

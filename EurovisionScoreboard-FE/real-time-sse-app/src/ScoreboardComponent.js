@@ -28,12 +28,14 @@ class ScoreboardComponent extends Component {
 
                             return value
                         }
-                    ).sort(
-                        (a,b) =>  a.key - b.key
-                    ).map(
+                    ).
+                    // sort(
+                    //     (a,b) =>  a.key - b.key
+                    // ).
+                    map(
                     (value, index) => {
                         return (
-                            <RankCountryComponent className={''} key={value.key} country={value.country} rank={value.rank} averageRank={value.averageRank}/>
+                            <RankCountryComponent className={''} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank}/>
                         )
                     }
                 )}
