@@ -21,6 +21,13 @@ body {
   background-color: darken($color-primary, 10%);
 } 
 
+.Logo {
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+  padding: 48px 48px 0;
+}
+
 .country {
   text-align: left;
   flex-grow: 1;
