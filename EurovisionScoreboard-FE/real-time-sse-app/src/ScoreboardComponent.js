@@ -8,9 +8,6 @@ class ScoreboardComponent extends Component {
         super(props);
         this.state = {"twelves": false}
     }
-    switchTwelveState(){
-        this.setState({"twelves": !this.state.twelves})
-    }
 
     render(){
         if (!this.props.ranking || !this.props.ranking.length){
@@ -22,7 +19,7 @@ class ScoreboardComponent extends Component {
                 <FlipMove enterAnimation="elevator" >
                 {this.props.ranking
                     .sort((a,b) => {
-                        if (this.state.twelves){
+                        if (this.props.twelvePointSystem){
                             return b.twelvePointRank - a.twelvePointRank
                         }
                         if (!a.averageRank || !b.averageRank){
@@ -45,13 +42,12 @@ class ScoreboardComponent extends Component {
                     map(
                     (value, index) => {
                         return (
-                            <RankCountryComponent className={``} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank} twelvePointRank={value.twelvePointRank} use12P={this.state.twelves}/>
+                            <RankCountryComponent className={``} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank} twelvePointRank={value.twelvePointRank} use12P={this.props.twelvePointSystem}/>
                         )
                     }
                 )}
             </FlipMove>
                 <br/>
-            <button onClick={this.switchTwelveState.bind(this)}>Use 12p system</button>
             </div>
         )
     }

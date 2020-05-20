@@ -1,7 +1,11 @@
 from tkinter import *
 from tkinter.ttk import Combobox
 
+from exporter import Exporter
 from models import ENTRIES, State, VOTERS
+
+exporter = Exporter("votes.csv", ENTRIES)
+
 
 
 def start_gui():
@@ -55,7 +59,7 @@ def start_gui():
     name_input.bind("<<ComboboxSelected>>", handle_name_change)
 
     def submit():
-        state.finish_voting()
+        state.finish_voting(exporter=exporter)
         reset_screen()
 
     submit_vote_button = Button(window, text="Submit Vote", command=submit)
@@ -71,6 +75,7 @@ def start_gui():
 def reset_screen():
     window.destroy()
     start_gui()
+
 
 
 start_gui()

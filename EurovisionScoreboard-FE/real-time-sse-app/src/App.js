@@ -16,10 +16,10 @@ class App extends Component {
         this.state = {
             "overallRanking":initial,
             "currentVoting": {},
-            "currentVoter": ""
+            "currentVoter": "",
+            "twelves": false
         }
         this.eventSource = new EventSource("http://localhost:5000/stream");
-
     }
 
     addVote(data){
@@ -65,7 +65,7 @@ class App extends Component {
             const arrayOfVotes = this.state.overallRanking[country]
             const sum = arrayOfVotes.reduce((a, b) => parseInt(a) + parseInt(b), 0);
             let twelvePointSum = 0
-            arrayOfVotes.forEach( x => twelvePointSum += rankToPointsMap[x])
+            arrayOfVotes.forEach( x => twelvePointSum += rankToPointsMap[x] || 0)
             console.log("points "+ arrayOfVotes + " 12p sum " + twelvePointSum)
             const avg = (sum / arrayOfVotes.length) || 0;
             ranking.push({"country": country, "averageRank": avg, "twelvePointRank": twelvePointSum})
@@ -76,9 +76,13 @@ class App extends Component {
     addRandomVote(){
         const votes = this.state.currentVoting
         const country = countries[Math.floor(Math.random() * countries.length)].toLowerCase()
-        const rank = Math.floor(Math.random() * 50)+1
+        const rank = Math.floor(Math.random() * countries.length)+1
         this.addVote({"country": country, "new_rank": rank})
         this.setState({"currentVoting": votes})
+    }
+
+    switchTwelveState(){
+        this.setState({"twelves": !this.state.twelves})
     }
 
     render() {
@@ -89,7 +93,7 @@ class App extends Component {
             <img src={require('./img/logo.svg')} />
           </div>
           <div className={"Scoreboard"}>
-            <ScoreboardComponent ranking={this.getRanking()}/>
+            <ScoreboardComponent ranking={this.getRanking()} twelvePointSystem={this.state.twelves}/>
           </div>
           <div className={"Voting"}>
             <NameComponent voterName={this.state.currentVoter}/>
@@ -98,6 +102,7 @@ class App extends Component {
             </div>
           </div>
           <button className={"Random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
+          <button onClick={this.switchTwelveState.bind(this)}>Use 12p system</button>
       </div>
     );
   }
