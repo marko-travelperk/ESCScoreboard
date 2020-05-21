@@ -17,7 +17,7 @@ body {
 
 .Buttons {
   position: fixed;
-  bottom: 24px;
+  bottom: 48px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -79,7 +79,7 @@ body {
     }
   }
   &:not(&--small):nth-of-type(-n+10) {
-    background-color: #D50040;
+    background-color: lighten($color-primary, 20%);
   }
   display: flex;
   flex-flow: row nowrap;
