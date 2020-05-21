@@ -30,7 +30,7 @@ def start_gui():
         state.add_vote(country=country, previous_rank=country_rank, new_rank=widget_value)
 
     offset = 0
-    split = int(len(ENTRIES)/2)
+    split = int(len(ENTRIES)/2) + 1
     for entry in ENTRIES:
         column = 2 if offset >= split else 0
         row = offset%split

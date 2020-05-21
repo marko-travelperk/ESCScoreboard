@@ -4,24 +4,25 @@ from urllib import request
 from pip._vendor import requests
 
 ENTRIES: t.List = [
-    "Iceland".lower(),
-    "Turkey".lower(),
-    # "Bosnia and Herzegovina".lower(),
-    # "Sweden".lower(),
-    # "Armenia".lower(),
-    # "Malta".lower(),
-    # "Israel".lower(),
-    # "Portugal".lower(),
-    # "Romania".lower(),
-    # "Macedonia".lower(),
-    # "Montenegro".lower(),
-    # "Finland".lower(),
-    # "Belarus".lower(),
-    # "Switzerland".lower(),
-    # "Andorra".lower(),
-    # "Bulgaria".lower(),
-    # "Belgium".lower(),
-    # "Czech Republic".lower(),
+    "Croatia".lower(),
+    "Ireland".lower(),
+    "Latvia".lower(),
+    "Serbia".lower(),
+    "Poland".lower(),
+    # "Norway".lower(),
+    # "Cyprus".lower(),
+    # "Slovakia".lower(),
+    # "Denmark".lower(),
+    # "Slovenia".lower(),
+    # "Hungary".lower(),
+    # "Azerbaijan".lower(),
+    # "Greece".lower(),
+    # "Lithuania".lower(),
+    # "Moldova".lower(),
+    # "Albania".lower(),
+    # "Ukraine".lower(),
+    # "Estonia".lower(),
+    # "Netherlands".lower()
 ]
 
 
