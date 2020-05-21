@@ -10,10 +10,34 @@ body {
   padding: 0;
   font-family: GothamBold; }
 
+.Buttons {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.Button {
+  background: white;
+  border: 0;
+  display: inline-block;
+  margin-left: 16px;
+  padding: 8px 12px 6px;
+  font-weight: 700;
+  border-radius: 240px;
+  color: #D50040;
+  transition: .4s ease;
+  font-family: "GothamBold", sans-serif; }
+
+.Button:hover {
+  cursor: pointer;
+  color: #D50040;
+  background-color: #112097; }
+
 .App {
   display: flex;
   flex-flow: row wrap;
-  background-color: #091152; }
+  background-color: #091152;
+  height: 100vh; }
 
 .Logo {
   flex-grow: 1;
@@ -26,21 +50,27 @@ body {
   flex-grow: 1;
   color: white;
   background-color: #0E1B80;
-  margin: 2px;
-  padding: 2px 8px;
+  margin: 0 0 4px;
+  padding: 4px 8px;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
+  break-inside: avoid;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
 
 .country--small {
   position: relative;
-  font-size: 12px; }
+  font-size: 13px;
+  min-width: 420px;
+  padding: 2px 8px; }
 
 .country--small .country__flag img {
-  width: 24px;
-  height: 16px; }
+  width: 22px;
+  height: 18px; }
+
+.country:not(.country--small):nth-of-type(-n+10) {
+  background-color: #D50040; }
 
 .country__rank {
   width: 32px;
@@ -75,8 +105,3 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
-
-.Button {
-  position: fixed;
-  top: 48px;
-  left: 48px; }
