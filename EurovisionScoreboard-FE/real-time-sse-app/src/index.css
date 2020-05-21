@@ -8,7 +8,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: GothamBold; }
+  font-family: GothamBold;
+  background-image: url("img/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .Buttons {
   position: fixed;
@@ -35,7 +39,6 @@ body {
 .App {
   display: flex;
   flex-flow: row wrap;
-  background-color: #091152;
   height: 100vh; }
 
 .Logo {
