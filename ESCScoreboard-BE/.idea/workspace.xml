@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa44a200-a9cd-42d1-8375-18f7ccad6323" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ESCQueue/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/exporter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/ScoreboardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/ScoreboardComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/index.css" afterDir="false" />
     </list>
@@ -97,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589728482210</updated>
       <workItem from="1590008660395" duration="4349000" />
-      <workItem from="1590082139659" duration="3400000" />
+      <workItem from="1590082139659" duration="7909000" />
     </task>
     <servers />
   </component>
@@ -114,32 +111,32 @@
     </state>
     <state x="776" y="310" key="FileChooserDialogImpl/2560.0.2560.1440/67.27.1853.1053/3200.1440.1920.1080@67.27.1853.1053" timestamp="1590083888082" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1589730071335" />
-    <state width="2514" height="488" key="GridCell.Tab.0.bottom" timestamp="1590086035031">
-      <screen x="0" y="27" width="2560" height="1413" />
+    <state width="1343" height="385" key="GridCell.Tab.0.bottom" timestamp="1590091284509">
+      <screen x="3200" y="1440" width="1920" height="1080" />
     </state>
-    <state width="2514" height="488" key="GridCell.Tab.0.bottom/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086035031" />
-    <state width="1807" height="334" key="GridCell.Tab.0.bottom/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590046480492" />
+    <state width="2514" height="385" key="GridCell.Tab.0.bottom/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086287046" />
+    <state width="1343" height="385" key="GridCell.Tab.0.bottom/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590091284509" />
     <state width="1807" height="270" key="GridCell.Tab.0.bottom/2560.0.2560.1440/67.27.1853.1053/3200.1440.1920.1080@67.27.1853.1053" timestamp="1590012579490" />
     <state width="1830" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1589845933715" />
-    <state width="2514" height="488" key="GridCell.Tab.0.center" timestamp="1590086035031">
-      <screen x="0" y="27" width="2560" height="1413" />
+    <state width="1343" height="385" key="GridCell.Tab.0.center" timestamp="1590091284509">
+      <screen x="3200" y="1440" width="1920" height="1080" />
     </state>
-    <state width="2514" height="488" key="GridCell.Tab.0.center/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086035031" />
-    <state width="1807" height="334" key="GridCell.Tab.0.center/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590046480492" />
+    <state width="2514" height="385" key="GridCell.Tab.0.center/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086287046" />
+    <state width="1343" height="385" key="GridCell.Tab.0.center/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590091284509" />
     <state width="1807" height="270" key="GridCell.Tab.0.center/2560.0.2560.1440/67.27.1853.1053/3200.1440.1920.1080@67.27.1853.1053" timestamp="1590012579490" />
     <state width="1830" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1589845933715" />
-    <state width="2514" height="488" key="GridCell.Tab.0.left" timestamp="1590086035031">
-      <screen x="0" y="27" width="2560" height="1413" />
+    <state width="1343" height="385" key="GridCell.Tab.0.left" timestamp="1590091284509">
+      <screen x="3200" y="1440" width="1920" height="1080" />
     </state>
-    <state width="2514" height="488" key="GridCell.Tab.0.left/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086035031" />
-    <state width="1807" height="334" key="GridCell.Tab.0.left/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590046480492" />
+    <state width="2514" height="385" key="GridCell.Tab.0.left/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086287046" />
+    <state width="1343" height="385" key="GridCell.Tab.0.left/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590091284509" />
     <state width="1807" height="270" key="GridCell.Tab.0.left/2560.0.2560.1440/67.27.1853.1053/3200.1440.1920.1080@67.27.1853.1053" timestamp="1590012579490" />
     <state width="1830" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1589845933715" />
-    <state width="2514" height="488" key="GridCell.Tab.0.right" timestamp="1590086035031">
-      <screen x="0" y="27" width="2560" height="1413" />
+    <state width="1343" height="385" key="GridCell.Tab.0.right" timestamp="1590091284509">
+      <screen x="3200" y="1440" width="1920" height="1080" />
     </state>
-    <state width="2514" height="488" key="GridCell.Tab.0.right/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086035031" />
-    <state width="1807" height="334" key="GridCell.Tab.0.right/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590046480492" />
+    <state width="2514" height="385" key="GridCell.Tab.0.right/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@0.27.2560.1413" timestamp="1590086287046" />
+    <state width="1343" height="385" key="GridCell.Tab.0.right/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590091284509" />
     <state width="1807" height="270" key="GridCell.Tab.0.right/2560.0.2560.1440/67.27.1853.1053/3200.1440.1920.1080@67.27.1853.1053" timestamp="1590012579490" />
     <state width="1830" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1589845933715" />
     <state width="2514" height="488" key="GridCell.Tab.1.bottom" timestamp="1590086035031">
@@ -174,6 +171,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1589729778865" />
+    <state x="3743" y="1637" width="824" height="684" key="editAsTableFormatDialogDimension" timestamp="1590132856703">
+      <screen x="3200" y="1440" width="1920" height="1080" />
+    </state>
+    <state x="3743" y="1637" width="824" height="684" key="editAsTableFormatDialogDimension/2560.0.2560.1440/0.27.2560.1413/3200.1440.1920.1080@3200.1440.1920.1080" timestamp="1590132856703" />
     <state x="970" y="458" width="620" height="522" key="find.popup" timestamp="1590085529870">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
@@ -205,6 +206,6 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ESCScoreboard_BE$board.coverage" NAME="board Coverage Results" MODIFIED="1590086079270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ESCScoreboard_BE$board.coverage" NAME="board Coverage Results" MODIFIED="1590086341572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -24,23 +24,14 @@ export const countryNameMap = {
 
     "croatia": "Croatia",
     "ireland": "Ireland",
-    "latvia": "Latvia",
-    "serbia": "Serbia",
-    "poland": "Poland",
     "norway": "Norway",
-    "cyprus": "Cyprus",
-    "slovakia": "Slovakia",
-    "denmark": "Denmark",
-    "slovenia": "Slovenia",
-    "hungary": "Hungary",
-    "azerbaijan": "Sweden/Iran",
-    "greece": "PAME ELLADA",
-    "lithuania": "Lithuania",
+    "denmark": "Bland Land",
+    "azerbaijan": "Azerbaijan",
+    "greece": "Greece",
     "moldova": "Moldova",
     "albania": "Albania",
     "ukraine": "Ukraine",
-    "estonia": "Estonia",
-    "netherlands": "Netherlands, The",
+    "estonia": "Estonia"
 }
 
 export const countryFlagMap = {
