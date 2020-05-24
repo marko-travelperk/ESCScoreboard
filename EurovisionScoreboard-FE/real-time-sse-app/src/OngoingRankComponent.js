@@ -22,7 +22,7 @@ class OngoingRankComponent extends Component{
                 return "May we have your votes please?"
             }
         return(
-            <FlipMove  enterAnimation="elevator" >
+            <FlipMove  enterLeaveAnimation="elevator" >
                 {
                     ranked.map(
                         (value, index) => {

@@ -6,23 +6,29 @@ from pip._vendor import requests
 ENTRIES: t.List = [
     "Croatia".lower(),
     "Ireland".lower(),
-    "Latvia".lower(),
-    "Serbia".lower(),
-    "Poland".lower(),
     "Norway".lower(),
-    "Cyprus".lower(),
-    "Slovakia".lower(),
     "Denmark".lower(),
-    "Slovenia".lower(),
-    "Hungary".lower(),
     "Azerbaijan".lower(),
     "Greece".lower(),
-    "Lithuania".lower(),
     "Moldova".lower(),
     "Albania".lower(),
     "Ukraine".lower(),
     "Estonia".lower(),
-    "Netherlands".lower()
+    "Macedonia".lower(),
+    "France".lower(),
+    "United Kingdom".lower(),
+    "Spain".lower(),
+    "Germany".lower(),
+    "Finland".lower(),
+    "Malta".lower(),
+    "Portugal".lower(),
+    "Russia".lower(),
+    "Turkey".lower(),
+    "Iceland".lower(),
+    "Bosnia and Herzegovina".lower(),
+    "Andorra".lower(),
+    "Armenia".lower(),
+    "Switzerland".lower(),
 ]
 
 
@@ -55,4 +61,4 @@ class State:
 history: t.List[State] = []
 
 
-VOTERS = ["Marko", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "FSE", "Hlynur"]
+VOTERS = ["Marko", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "FSE", "Hlynur", "Aivis"]
