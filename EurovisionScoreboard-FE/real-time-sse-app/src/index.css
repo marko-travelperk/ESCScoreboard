@@ -31,10 +31,11 @@ body {
   color: #D50040;
   transition: .4s ease;
   font-family: "GothamBold", sans-serif; }
-  .Button:hover {
-    cursor: pointer;
-    color: #D50040;
-    background-color: #112097; }
+
+.Button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #112097; }
 
 .App {
   display: flex;
@@ -45,7 +46,8 @@ body {
   flex-grow: 1;
   width: 100%;
   text-align: center;
-  padding: 48px 48px 0; }
+  padding: 48px;
+  height: 48px; }
 
 .country {
   text-align: left;
@@ -60,40 +62,50 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-  .country--small {
-    position: relative;
-    font-size: 13px;
-    min-width: 420px;
-    padding: 2px 8px; }
-    .country--small .country__flag img {
-      width: 22px;
-      height: 18px; }
-  .country:not(.country--small):nth-of-type(-n+10) {
-    background-color: #182edc; }
-  .country__rank {
-    width: 32px;
-    margin-right: 16px;
-    text-align: center; }
-  .country__flag {
-    margin-right: 16px; }
-    .country__flag img {
-      display: block;
-      width: 28px;
-      height: 24px; }
-  .country__average {
-    margin-left: auto; }
+
+.country--small {
+  position: relative;
+  font-size: 13px;
+  min-width: 420px;
+  padding: 2px 8px; }
+
+.country--small .country__flag img {
+  width: 22px;
+  height: 18px; }
+
+.country:not(.country--small):nth-of-type(-n+10) {
+  background-color: #182edc; }
+
+.country__rank {
+  width: 32px;
+  margin-right: 16px;
+  text-align: center; }
+
+.country__flag {
+  margin-right: 16px; }
+
+.country__flag img {
+  display: block;
+  width: 28px;
+  height: 24px; }
+
+.country__average {
+  margin-left: auto; }
 
 .Scoreboard {
   width: calc(100% / 3 * 2);
-  padding: 48px; }
-  .Scoreboard > div {
-    columns: 2; }
+  padding: 0 48px; }
+
+.Scoreboard > div {
+  columns: 2; }
 
 .Voting {
   width: calc(100% / 3);
-  margin: 48px 0;
   text-align: center;
   color: white; }
+
+.Voting h1 {
+  margin: 0 0 24px; }
 
 .Ranking {
   display: flex;

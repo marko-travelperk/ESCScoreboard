@@ -51,7 +51,7 @@ export const countryNameMap = {
     "macedonia": "Macedonia",
     "france": "France",
     "united kingdom": "United Kingdom, The",
-    "spain": "ESPAIN WILl WIN",
+    "spain": "ESPAIN WILL WIN",
     "germany": "Germany",
     "finland": "Finland",
     "malta": "Matla",

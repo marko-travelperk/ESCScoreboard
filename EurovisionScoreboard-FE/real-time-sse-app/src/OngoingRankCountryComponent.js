@@ -10,7 +10,7 @@ class OngoingRankCountryComponent extends Component {
                     #{this.props.rank}
                 </span>
                 <span className={"country__flag"}>
-                    <img src={getFlagForCountry(this.props.country)} alt={"RS"}/>
+                    <img src={getFlagForCountry(this.props.country)}/>
                 </span>
                 <span className={"country__name"}>
                     {countryNameMap[this.props.country.toLowerCase()]}
