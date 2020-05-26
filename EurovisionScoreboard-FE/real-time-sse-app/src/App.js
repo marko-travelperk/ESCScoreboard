@@ -9,9 +9,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         let initial = {}
-        for (var country in countryNameMap){
-            initial[country] = []
-        }
+        countries.forEach(country => {
+            initial[country.toLowerCase()] = []
+        })
 //        initial = {"serbia": []}
         this.state = {
             "overallRanking":initial,
@@ -102,7 +102,7 @@ class App extends Component {
             </div>
           </div>
           <div className={"Buttons"}>
-            {/*<button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>*/}
+            <button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
             <button className={"Button Button--12"} onClick={this.switchTwelveState.bind(this)}>Use 12p system</button>
           </div>
       </div>

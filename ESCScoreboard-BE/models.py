@@ -1,5 +1,4 @@
 import typing as t
-from urllib import request
 
 from pip._vendor import requests
 

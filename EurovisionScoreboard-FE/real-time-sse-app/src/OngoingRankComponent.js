@@ -27,7 +27,7 @@ class OngoingRankComponent extends Component{
                     ranked.map(
                         (value, index) => {
                             return (
-                                <OngoingRankCountryComponent country={value[0]} rank={value[1]} key={index}/>
+                                <OngoingRankCountryComponent country={value[0]} rank={value[1]} key={value[0]}/>
                             )
                         }
                     )

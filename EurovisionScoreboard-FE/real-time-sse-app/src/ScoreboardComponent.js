@@ -16,7 +16,7 @@ class ScoreboardComponent extends Component {
         const limit = Math.trunc(this.props.ranking.length/2)
         return(
             <div>
-                <FlipMove duration={500} staggerDurationBy={50} staggerDelayBy={50} enterAnimation="elevator" leaveAnimation="elevator" appearAnimation={"accordionVertical"} >
+                <FlipMove duration={250} staggerDurationBy={20} staggerDelayBy={20} enterAnimation="elevator" leaveAnimation="elevator" appearAnimation={"accordionVertical"} >
                 {this.props.ranking
                     .sort((a,b) => {
                         if (this.props.twelvePointSystem){
@@ -42,7 +42,7 @@ class ScoreboardComponent extends Component {
                     map(
                     (value, index) => {
                         return (
-                            <RankCountryComponent className={``} key={index} country={value.country} rank={value.rank} averageRank={value.averageRank} twelvePointRank={value.twelvePointRank} use12P={this.props.twelvePointSystem}/>
+                            <RankCountryComponent className={``} key={value.country} country={value.country} rank={value.rank} averageRank={value.averageRank} twelvePointRank={value.twelvePointRank} use12P={this.props.twelvePointSystem}/>
                         )
                     }
                 )}
