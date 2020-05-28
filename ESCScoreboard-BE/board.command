@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from tkinter import *
 from tkinter.ttk import Combobox
 
@@ -5,7 +6,6 @@ from exporter import Exporter
 from models import ENTRIES, State, VOTERS
 
 exporter = Exporter("votes.csv", ENTRIES)
-
 
 
 def start_gui():
