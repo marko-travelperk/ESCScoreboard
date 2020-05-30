@@ -19,12 +19,12 @@ class Exporter:
                     # if i == len(list(votes.values())):
                     #     break
                     if i == 0:
-                        outhandle.write(f"{line},{voter_name}\n")
+                        outhandle.write(line + "," + voter_name + "\n")
                         i += 1
                         continue
                     country = line.split(',')[0]
                     rank = votes[country]
-                    outhandle.write(f"{line},{rank}\n")
+                    outhandle.write(line + "," + rank + "\n")
                     i += 1
         os.remove(self.filename)
         os.rename("testout.txt", self.filename)

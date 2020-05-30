@@ -35,12 +35,12 @@ def start_gui():
         column = 2 if offset >= split else 0
         row = offset%split
         lbl = Label(window, text=entry.upper())
-        lbl.extra = f"{entry.lower()}_label"
+        lbl.extra = entry.lower() + "_label"
         lbl.grid(column=column, row=row, sticky="nsew")
         offset += 1
 
         combo = Combobox(window)
-        combo.extra = f"{entry.lower()}_rank"
+        combo.extra = entry.lower() + "_rank"
         combo["values"] = list(range(1, len(ENTRIES)+1))
         combo.grid(column=column+1, row=row, sticky="nsew")
         combo.bind("<<ComboboxSelected>>", handle_vote_change)

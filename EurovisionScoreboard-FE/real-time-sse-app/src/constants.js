@@ -1,28 +1,27 @@
 export const countries = [
-    "spain",
-    "greece",
-    "yugoslavia",
-    "belgium",
-    "turkey",
-    "netherlands",
-    "switzerland",
-    "united kingdom",
+    "armenia",
+    "estonia",
+    "malta",
     "iceland",
-    "luxembourg",
-    "norway",
-    "denmark",
-    "israel",
-    "germany",
-    "france",
-    "portugal",
-    "ireland",
-    "sweden",
-    "italy",
-    "austria",
+    "bosnia and herzegovina",
+    "ukraine",
+    "macedonia",
+    "monaco",
     "finland",
+    "turkey",
+    "sweden",
+    "portugal",
+    "russia",
+    "belarus",
+    "lithuania",
     "cyprus",
-    "ireland",
-
+    "poland",
+    "bulgaria",
+    "belgium",
+    "andorra",
+    "denmark",
+    "netherlands",
+    "ireland"
     // "azerbaijan",
     // "moldova",
     // "albania",
@@ -71,7 +70,12 @@ export const countryNameMap = {
     "sweden": "Sweden",
     "cyprus": "Cyprus",
     "italy": "Italy",
-    "austria": "Austria"
+    "austria": "Austria",
+    "monaco": "Monaco",
+    "poland": "Poland",
+    "lithuania": "Not the Winners",
+    "bulgaria": "Bulgaria",
+    "belarus": "Belarus"
 }
 
 export const countryFlagMap = {
@@ -120,7 +124,8 @@ export const countryFlagMap = {
     "yugoslavia": "YU.png",
     "luxembourg": "LU.png",
     "italy": "IT.png",
-    "austria": "AT.png"
+    "austria": "AT.png",
+    "monaco": "MC.png"
 }
 
 

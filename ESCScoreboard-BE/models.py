@@ -1,8 +1,6 @@
-import typing as t
-
 from pip._vendor import requests
 
-ENTRIES: t.List = [
+ENTRIES = [
     # "Croatia".lower(),
     "Ireland".lower(),
     # "Norway".lower(),
@@ -41,8 +39,6 @@ ENTRIES: t.List = [
 
 
 class State:
-    current_voter: str
-    current_votes_list: t.Dict[str, int]
 
     def __init__(self):
         self.current_votes_list = dict()
@@ -53,12 +49,12 @@ class State:
             "name": name
         })
 
-    def finish_voting(self, exporter: "Exporter"):
-        print(f"{self.current_voter} done! scores {self.current_votes_list}")
+    def finish_voting(self, exporter):
+        # print(f"{self.current_voter} done! scores {self.current_votes_list}")
         exporter.add_votes(self.current_votes_list, self.current_voter)
         requests.post("http://localhost:5000/reset", {})
 
-    def add_vote(self, country: str, previous_rank: int, new_rank: int):
+    def add_vote(self, country, previous_rank, new_rank):
         self.current_votes_list[country] = new_rank
         requests.post("http://localhost:5000/vote", {
             "country": country,
@@ -66,7 +62,7 @@ class State:
             "new_rank": new_rank
         })
 
-history: t.List[State] = []
+history = []
 
 
-VOTERS = ["Marko", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "FSE", "Hlynur", "Aivis"]
+VOTERS = ["Marko", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "Wiv", "Hlynur", "Aivis"]
