@@ -4,8 +4,8 @@
     <list default="true" id="aa44a200-a9cd-42d1-8375-18f7ccad6323" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/votes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../EurovisionScoreboard-FE/real-time-sse-app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,9 +225,5 @@
         <watch expression="list(votes.values())[i-1]" language="Python" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ESCScoreboard_BE$board_command.coverage" NAME="board Coverage Results" MODIFIED="1591116856257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ESCScoreboard_BE$board.coverage" NAME="board Coverage Results" MODIFIED="1591292883483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
