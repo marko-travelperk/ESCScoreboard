@@ -28,11 +28,10 @@ body {
   color: #194A8D;
   transition: .4s ease;
   font-family: "GothamBold", sans-serif; }
-
-.Button:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #1d55a3; }
+  .Button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #1d55a3; }
 
 .App {
   display: grid;
@@ -60,66 +59,53 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-
-.country--small {
-  position: relative;
-  font-size: 16px;
-  min-width: 420px;
-  padding: 4px 8px; }
-
-.country--small .country__flag img {
-  width: 22px;
-  height: 18px; }
-
-.country:not(.country--small):nth-of-type(-n+10) {
-  background-color: #3179db; }
-
-.country__rank {
-  width: 32px;
-  margin-right: 16px;
-  text-align: center; }
-
-.country__flag {
-  margin-right: 16px; }
-
-.country__flag img {
-  display: block;
-  width: 28px;
-  height: 24px; }
-
-.country__average {
-  margin-left: auto; }
+  .country--small {
+    position: relative;
+    font-size: 16px;
+    min-width: 420px;
+    padding: 4px 8px; }
+    .country--small .country__flag img {
+      width: 22px;
+      height: 18px; }
+  .country:not(.country--small):nth-of-type(-n+10) {
+    background-color: #3179db; }
+  .country__rank {
+    width: 32px;
+    margin-right: 16px;
+    text-align: center; }
+  .country__flag {
+    margin-right: 16px; }
+    .country__flag img {
+      display: block;
+      width: 28px;
+      height: 24px; }
+  .country__average {
+    margin-left: auto; }
 
 .Scoreboard {
   grid-area: scoreboard;
   width: 100%;
   padding: 0 48px; }
-
-.Scoreboard > div {
-  columns: 2; }
+  .Scoreboard > div {
+    columns: 2; }
 
 .Voting {
   grid-area: votes;
   width: 100%;
   text-align: center;
   color: white; }
-
-.Voting h1 {
-  margin: 0 0 24px;
-  display: inline-block;
-  background-color: #EDE262;
-  color: #113362;
-  padding: 12px 24px;
-  border-radius: 240px; }
+  .Voting h1 {
+    margin: 0 0 24px;
+    display: inline-block;
+    background-color: #EDE262;
+    color: #113362;
+    padding: 12px 24px;
+    border-radius: 240px; }
 
 .Buttons {
   grid-area: footer; }
 
 .Ranking {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center; }
-ng {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
