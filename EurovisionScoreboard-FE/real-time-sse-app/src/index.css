@@ -2,14 +2,18 @@
   font-family: 'GothamBold';
   src: url("fonts/GothamBold.otf"); }
 
+@font-face {
+  font-family: 'Digii';
+  src: url("fonts/Digii.TTF"); }
+
 * {
   box-sizing: border-box; }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: GothamBold;
-  background-image: url("img/background.jpg");
+  font-family: Helvetica, sans-serif;
+  background-color: #111;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
@@ -25,14 +29,13 @@ body {
   padding: 8px 12px 6px;
   font-weight: 700;
   border-radius: 240px;
-  color: #194A8D;
+  color: #111;
   transition: .4s ease;
   font-family: "GothamBold", sans-serif; }
-
-.Button:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #1d55a3; }
+  .Button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #1e1e1e; }
 
 .App {
   display: grid;
@@ -51,75 +54,69 @@ body {
   text-align: left;
   flex-grow: 1;
   color: white;
-  background-color: #194A8D;
+  background-color: #111;
   margin: 0 0 4px;
-  padding: 6px 8px;
+  padding: 3px 8px 5px 8px;
   width: 100%;
   font-size: 18px;
   break-inside: avoid;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.33);
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-
-.country--small {
-  position: relative;
-  font-size: 16px;
-  min-width: 420px;
-  padding: 4px 8px; }
-
-.country--small .country__flag img {
-  width: 22px;
-  height: 18px; }
-
-.country:not(.country--small):nth-of-type(-n+10) {
-  background-color: #3179db; }
-
-.country__rank {
-  width: 32px;
-  margin-right: 16px;
-  text-align: center; }
-
-.country__flag {
-  margin-right: 16px; }
-
-.country__flag img {
-  display: block;
-  width: 28px;
-  height: 24px; }
-
-.country__average {
-  margin-left: auto; }
+  .country--small {
+    position: relative;
+    font-size: 14px;
+    min-width: 420px;
+    padding: 3px 8px; }
+    .country--small .country__flag img {
+      width: 22px;
+      height: 18px; }
+  .country__rank {
+    width: 32px;
+    margin-right: 16px;
+    text-align: center; }
+  .country__name {
+    padding: 4px;
+    color: #111111;
+    background-color: #fff;
+    width: 280px; }
+  .country__flag {
+    margin-right: 16px; }
+    .country__flag img {
+      display: block;
+      width: 28px;
+      height: 24px; }
+  .country__average {
+    margin-left: auto;
+    font-family: "Digii";
+    color: #EDE262;
+    font-size: 24px; }
 
 .Scoreboard {
   grid-area: scoreboard;
   width: 100%;
   padding: 0 48px; }
-
-.Scoreboard > div {
-  columns: 2; }
+  .Scoreboard > div {
+    columns: 2; }
 
 .Voting {
   grid-area: votes;
   width: 100%;
   text-align: center;
   color: white; }
-
-.Voting h1 {
-  margin: 0 0 24px;
-  display: inline-block;
-  background-color: #EDE262;
-  color: #113362;
-  padding: 12px 24px;
-  border-radius: 240px; }
+  .Voting h1 {
+    margin: 0 0 24px;
+    display: inline-block;
+    background-color: #EDE262;
+    color: black;
+    padding: 12px 24px; }
 
 .Buttons {
   grid-area: footer; }
 
 .Ranking {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center; }
-ng {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }

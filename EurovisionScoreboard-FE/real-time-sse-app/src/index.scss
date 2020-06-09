@@ -3,7 +3,12 @@
   src: url('fonts/GothamBold.otf');
 }
 
-$color-primary: #194A8D;
+@font-face {
+  font-family: 'Digii';
+  src: url('fonts/Digii.TTF');
+}
+
+$color-primary: #111;
 
 * {
   box-sizing: border-box;
@@ -12,8 +17,9 @@ $color-primary: #194A8D;
 body {
   margin: 0;
   padding: 0;
-  font-family: GothamBold;
-  background-image: url("img/background.jpg");
+  font-family: Helvetica, sans-serif;
+  background-color: #111;
+  // background-image: url("img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,6 +40,7 @@ body {
   color: $color-primary;
   transition: .4s ease;
   font-family: "GothamBold", sans-serif;
+
   &:hover {
     cursor: pointer;
     color: white;
@@ -50,8 +57,8 @@ body {
   grid-template-areas:
     "logo votes"
     "scoreboard votes"
-    "footer votes";  
-} 
+    "footer votes";
+}
 
 .Logo {
   grid-area: logo;
@@ -65,15 +72,19 @@ body {
   color: white;
   background-color: $color-primary;
   margin: 0 0 4px;
-  padding: 6px 8px;
+  padding: 3px 8px 5px 8px;
   width: 100%;
   font-size: 18px;
   break-inside: avoid;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(white, 0.33);
+
   &--small {
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     min-width: 420px;
-    padding: 4px 8px;
+    padding: 3px 8px;
+
     .country {
       &__flag {
         img {
@@ -83,27 +94,42 @@ body {
       }
     }
   }
-  &:not(&--small):nth-of-type(-n+10) {
-    background-color: lighten($color-primary, 20%);
-  }
+
+  // &:not(&--small):nth-of-type(-n+10) {
+  //   background-color: lighten($color-primary, 20%);
+  // }
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
   &__rank {
     width: 32px;
     margin-right: 16px;
     text-align: center;
   }
+
+  &__name {
+    padding: 4px;
+    color: #111111;
+    background-color: #fff;
+    width: 280px;
+  }
+
   &__flag {
     margin-right: 16px;
+
     img {
       display: block;
       width: 28px;
       height: 24px;
     }
   }
+
   &__average {
     margin-left: auto;
+    font-family: "Digii";
+    color: #EDE262;
+    font-size: 24px;
   }
 }
 
@@ -111,7 +137,8 @@ body {
   grid-area: scoreboard;
   width: 100%;
   padding: 0 48px;
-  > div {
+
+  >div {
     columns: 2;
   }
 }
@@ -121,13 +148,13 @@ body {
   width: 100%;
   text-align: center;
   color: white;
+
   h1 {
     margin: 0 0 24px;
     display: inline-block;
     background-color: #EDE262;
     color: darken($color-primary, 10%);
     padding: 12px 24px;
-    border-radius: 240px;
   }
 }
 
