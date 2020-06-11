@@ -3,8 +3,8 @@
   src: url("fonts/GothamBold.otf"); }
 
 @font-face {
-  font-family: 'Digii';
-  src: url("fonts/Digii.TTF"); }
+  font-family: 'Rosewood';
+  src: url("fonts/Rosewood.ttf"); }
 
 * {
   box-sizing: border-box; }
@@ -13,10 +13,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
-  background-color: #111;
+  background-color: white;
+  background-image: url("img/true-fantasy.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  overflow: hidden; }
 
 .Buttons {
   text-align: center; }
@@ -56,26 +58,30 @@ body {
   flex-grow: 1;
   color: white;
   background-color: #111;
-  margin: 0 0 4px;
+  margin: 0 0 8px;
   padding: 3px 8px 5px 8px;
   width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   break-inside: avoid;
   text-transform: uppercase;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.33);
+  border-radius: 0 16px 0 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
 
 .country--small {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   min-width: 420px;
-  padding: 3px 8px; }
+  padding: 2px 8px;
+  margin: 0 0 2px; }
 
 .country--small .country__flag img {
   width: 22px;
   height: 18px; }
+
+.country:not(.country--small):nth-of-type(-n+10) .country__name {
+  color: #F4CA40; }
 
 .country__rank {
   width: 32px;
@@ -84,9 +90,7 @@ body {
 
 .country__name {
   padding: 4px;
-  color: #111111;
-  background-color: #fff;
-  width: 280px; }
+  color: white; }
 
 .country__flag {
   margin-right: 16px; }
@@ -98,9 +102,8 @@ body {
 
 .country__average {
   margin-left: auto;
-  font-family: "Digii";
-  color: #EDE262;
-  font-size: 24px; }
+  font-family: "Rosewood";
+  font-size: 20px; }
 
 .Scoreboard {
   grid-area: scoreboard;
@@ -113,15 +116,36 @@ body {
 .Voting {
   grid-area: votes;
   width: 100%;
-  text-align: center;
-  color: white; }
+  color: white;
+  position: relative; }
+
+.Voting:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -300px;
+  right: 0;
+  z-index: 0;
+  width: 400px;
+  height: 400px;
+  background-image: url("img/flowers.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  animation: spin 8s infinite; }
 
 .Voting h1 {
   margin: 0 0 24px;
   display: inline-block;
-  background-color: #EDE262;
-  color: black;
-  padding: 12px 24px; }
+  background-color: #111;
+  color: white;
+  padding: 4px 12px;
+  transform: rotate(-4deg);
+  font-family: "Rosewood";
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+  z-index: 2; }
 
 .Buttons {
   grid-area: footer; }
@@ -130,3 +154,9 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

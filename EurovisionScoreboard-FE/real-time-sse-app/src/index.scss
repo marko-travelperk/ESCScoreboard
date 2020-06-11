@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: 'Digii';
-  src: url('fonts/Digii.TTF');
+  font-family: 'Rosewood';
+  src: url('fonts/Rosewood.ttf');
 }
 
 $color-primary: #111;
@@ -18,11 +18,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
-  background-color: #111;
-  // background-image: url("img/background.jpg");
+  background-color: white;
+  background-image: url("img/true-fantasy.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
 }
 
 .Buttons {
@@ -70,20 +71,21 @@ body {
   text-align: left;
   flex-grow: 1;
   color: white;
-  background-color: $color-primary;
-  margin: 0 0 4px;
+  background-color: #111;
+  margin: 0 0 8px;
   padding: 3px 8px 5px 8px;
   width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   break-inside: avoid;
   text-transform: uppercase;
-  border-bottom: 2px solid rgba(white, 0.33);
+  border-radius: 0 16px 0 0;
 
   &--small {
     position: relative;
-    font-size: 14px;
+    font-size: 13px;
     min-width: 420px;
-    padding: 3px 8px;
+    padding: 2px 8px;
+    margin: 0 0 2px;
 
     .country {
       &__flag {
@@ -95,9 +97,11 @@ body {
     }
   }
 
-  // &:not(&--small):nth-of-type(-n+10) {
-  //   background-color: lighten($color-primary, 20%);
-  // }
+  &:not(&--small):nth-of-type(-n+10) {
+   .country__name {
+     color: #F4CA40;
+   }
+  }
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -110,9 +114,7 @@ body {
 
   &__name {
     padding: 4px;
-    color: #111111;
-    background-color: #fff;
-    width: 280px;
+    color: white;
   }
 
   &__flag {
@@ -127,9 +129,8 @@ body {
 
   &__average {
     margin-left: auto;
-    font-family: "Digii";
-    color: #EDE262;
-    font-size: 24px;
+    font-family: "Rosewood"; 
+    font-size: 20px;
   }
 }
 
@@ -146,15 +147,36 @@ body {
 .Voting {
   grid-area: votes;
   width: 100%;
-  text-align: center;
   color: white;
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -300px;
+    right: 0;
+    z-index: 0;
+    width: 400px;
+    height: 400px;
+    background-image: url("img/flowers.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    animation: spin 8s infinite;
+  }
 
   h1 {
     margin: 0 0 24px;
     display: inline-block;
-    background-color: #EDE262;
-    color: darken($color-primary, 10%);
-    padding: 12px 24px;
+    background-color: #111;
+    color: white;
+    padding: 4px 12px;
+    transform: rotate(-4deg);
+    font-family: "Rosewood";
+    text-transform: uppercase;
+    width: 100%;
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -166,4 +188,9 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
