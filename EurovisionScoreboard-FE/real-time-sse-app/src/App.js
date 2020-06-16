@@ -102,8 +102,8 @@ class App extends Component {
             </div>
           </div>
           <div className={"Buttons"}>
-            <button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
-            <button className={"Button Button--12"} onClick={this.switchTwelveState.bind(this)}>Use 12p system</button>
+            {/*<button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>*/}
+            <button className={"Button Button--12"} onClick={this.switchTwelveState.bind(this)}>{this.state.twelves ? "Use Ranking" :  "Use 12p system"  }</button>
           </div>
       </div>
     );
