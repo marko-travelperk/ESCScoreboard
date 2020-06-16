@@ -1,10 +1,6 @@
 @font-face {
-  font-family: 'GothamBold';
-  src: url("fonts/GothamBold.otf"); }
-
-@font-face {
-  font-family: 'Rosewood';
-  src: url("fonts/Rosewood.ttf"); }
+  font-family: 'Gotham';
+  src: url("fonts/Gotham-Medium.otf"); }
 
 * {
   box-sizing: border-box; }
@@ -12,9 +8,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: "Gotham", sans-serif;
   background-color: white;
-  background-image: url("img/true-fantasy.jpg");
+  background-image: url("img/we-are-one.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -28,112 +24,127 @@ body {
   border: 0;
   display: inline-block;
   margin-left: 16px;
-  padding: 8px 12px 6px;
+  padding: 8px 12px;
   font-weight: 700;
   border-radius: 240px;
   color: #111;
   transition: .4s ease;
-  font-family: "GothamBold", sans-serif; }
-  .Button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #1e1e1e; }
+  font-family: "Gotham";
+  text-transform: uppercase; }
+
+.Button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #1e1e1e; }
 
 .App {
+  padding: 48px 280px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 196px auto 156px;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 240px auto 156px;
   height: 100vh;
   align-items: center;
   grid-template-areas: "logo votes" "scoreboard votes" "footer votes"; }
 
 .Logo {
   grid-area: logo;
-  text-align: center;
-  padding: 48px; }
+  text-align: center; }
 
 .country {
   text-align: left;
   flex-grow: 1;
   color: white;
-  background-color: #111;
-  margin: 0 0 8px;
-  padding: 3px 8px 5px 8px;
+  margin: 0;
+  padding: 5px 8px 5px 8px;
   width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   break-inside: avoid;
   text-transform: uppercase;
-  border-radius: 0 16px 0 0;
+  position: relative;
+  background-image: radial-gradient(circle at bottom, #0f242a, transparent);
+  background-size: 100% 24px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-  .country--small {
-    position: relative;
-    font-size: 13px;
-    min-width: 420px;
-    padding: 2px 8px;
-    margin: 0 0 2px; }
-    .country--small .country__flag img {
-      width: 22px;
-      height: 18px; }
-  .country:not(.country--small):nth-of-type(-n+10) .country__name {
-    color: #F4CA40; }
-  .country__rank {
-    width: 32px;
-    margin-right: 16px;
-    text-align: center; }
-  .country__name {
-    padding: 4px;
-    color: white; }
-  .country__flag {
-    margin-right: 16px; }
-    .country__flag img {
-      display: block;
-      width: 28px;
-      height: 24px; }
-  .country__average {
-    margin-left: auto;
-    font-family: "Rosewood";
-    font-size: 20px; }
+
+.country:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
+
+.country--small {
+  position: relative;
+  font-size: 12px;
+  padding: 2px 8px;
+  margin: 0 0 2px;
+  min-width: 326px; }
+
+.country--small .country__flag img {
+  width: 22px;
+  height: 18px; }
+
+.country:not(.country--small):nth-of-type(-n+10) {
+  background-color: #1a3a41; }
+
+.country__rank {
+  width: 32px;
+  margin-right: 16px;
+  text-align: center; }
+
+.country__name {
+  padding: 4px;
+  color: white; }
+
+.country__flag {
+  margin-right: 16px; }
+
+.country__flag img {
+  display: block;
+  width: 28px;
+  height: 24px; }
+
+.country__average {
+  margin-left: auto;
+  font-size: 16px; }
 
 .Scoreboard {
   grid-area: scoreboard;
   width: 100%;
-  padding: 0 48px; }
-  .Scoreboard > div {
-    columns: 2; }
+  padding: 0 36px; }
+
+.Scoreboard > div {
+  columns: 2; }
 
 .Voting {
   grid-area: votes;
   width: 100%;
   color: white;
   position: relative; }
-  .Voting:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -300px;
-    right: 0;
-    z-index: 0;
-    width: 400px;
-    height: 400px;
-    background-image: url("img/flowers.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    animation: spin 8s infinite; }
-  .Voting h1 {
-    margin: 0 0 24px;
-    display: inline-block;
-    background-color: #111;
-    color: white;
-    padding: 4px 12px;
-    transform: rotate(-4deg);
-    font-family: "Rosewood";
-    text-transform: uppercase;
-    width: 100%;
-    position: relative;
-    z-index: 2; }
+
+.Voting h1 {
+  text-align: center;
+  display: block;
+  color: white;
+  position: relative;
+  padding: 8px 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  background-image: radial-gradient(circle at bottom, #2d535c 0%, transparent 66%); }
+
+.Voting h1:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
 
 .Buttons {
   grid-area: footer; }
@@ -142,9 +153,3 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
