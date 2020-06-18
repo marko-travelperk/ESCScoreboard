@@ -30,6 +30,11 @@ def send_reset():
     sse.publish(request.form, type='reset')
     return "Message sent!"
 
+@api.route('/cancel', methods=['POST'])
+def send_cancel():
+    sse.publish(request.form, type='cancel')
+    return "Message sent!"
+
 #
 # def get_event():
 #     sleep(1.0)

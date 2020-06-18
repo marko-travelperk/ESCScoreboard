@@ -65,6 +65,14 @@ def start_gui():
     submit_vote_button = Button(window, text="Submit Vote", command=submit)
     submit_vote_button.grid(column=4, row=5, sticky="nsew")
 
+    def cancel_vote():
+        state.cancel_vote()
+        reset_screen()
+
+    cancel_vote_button = Button(window, text="Cancel Vote", command=cancel_vote)
+    cancel_vote_button.grid(column=4, row=10, sticky="nsew")
+
+
     for column in range(5):
         window.grid_columnconfigure(column, weight=1)
     for row in range(split):

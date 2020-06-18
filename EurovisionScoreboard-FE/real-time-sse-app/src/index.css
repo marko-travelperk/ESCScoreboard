@@ -31,11 +31,10 @@ body {
   transition: .4s ease;
   font-family: "Gotham";
   text-transform: uppercase; }
-
-.Button:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #1e1e1e; }
+  .Button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #1e1e1e; }
 
 .App {
   padding: 48px 280px;
@@ -66,85 +65,73 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-
-.country:after {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
-
-.country--small {
-  position: relative;
-  font-size: 12px;
-  padding: 2px 8px;
-  margin: 0 0 2px;
-  min-width: 326px; }
-
-.country--small .country__flag img {
-  width: 22px;
-  height: 18px; }
-
-.country:not(.country--small):nth-of-type(-n+10) {
-  background-color: #1a3a41; }
-
-.country__rank {
-  width: 32px;
-  margin-right: 16px;
-  text-align: center; }
-
-.country__name {
-  padding: 4px;
-  color: white; }
-
-.country__flag {
-  margin-right: 16px; }
-
-.country__flag img {
-  display: block;
-  width: 28px;
-  height: 24px; }
-
-.country__average {
-  margin-left: auto;
-  font-size: 16px; }
+  .country:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
+  .country--small {
+    position: relative;
+    font-size: 12px;
+    padding: 2px 8px;
+    margin: 0 0 2px;
+    min-width: 326px; }
+    .country--small .country__flag img {
+      width: 22px;
+      height: 18px; }
+  .country:not(.country--small):nth-of-type(-n+10) {
+    background-color: #1a3a41; }
+  .country__rank {
+    width: 32px;
+    margin-right: 16px;
+    text-align: center; }
+  .country__name {
+    padding: 4px;
+    color: white; }
+  .country__flag {
+    margin-right: 16px; }
+    .country__flag img {
+      display: block;
+      width: 28px;
+      height: 24px; }
+  .country__average {
+    margin-left: auto;
+    font-size: 16px; }
 
 .Scoreboard {
   grid-area: scoreboard;
   width: 100%;
   padding: 0 36px; }
-
-.Scoreboard > div {
-  columns: 2; }
+  .Scoreboard > div {
+    columns: 2; }
 
 .Voting {
   grid-area: votes;
   width: 100%;
   color: white;
   position: relative; }
-
-.Voting h1 {
-  text-align: center;
-  display: block;
-  color: white;
-  position: relative;
-  padding: 8px 0;
-  text-transform: uppercase;
-  font-size: 18px;
-  background-image: radial-gradient(circle at bottom, #2d535c 0%, transparent 66%); }
-
-.Voting h1:after {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
+  .Voting h1 {
+    text-align: center;
+    display: block;
+    color: white;
+    position: relative;
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    background-image: radial-gradient(circle at bottom, #2d535c 0%, transparent 66%); }
+    .Voting h1:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
 
 .Buttons {
   grid-area: footer; }

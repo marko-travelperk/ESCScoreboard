@@ -36,6 +36,19 @@ class App extends Component {
         this.setState({"currentVoting": currentVotes, "overallRanking": ranking})
     }
 
+    cancelCurrentVote(){
+        let currentVotes = this.state.currentVoting
+        let ranking = this.state.overallRanking
+        for (const country in currentVotes)  {
+            ranking[country].pop()
+        }
+        this.setState({
+            "overallRanking": ranking,
+            "currentVoting":{},
+            "currentVoter": "And now we go to..."
+        })
+    }
+
     parseName(event){
         this.setState({"currentVoter": event.name})
     }
@@ -56,6 +69,9 @@ class App extends Component {
         })
         this.eventSource.addEventListener('reset', e => {
             this.endvote()
+        })
+        this.eventSource.addEventListener('cancel', e => {
+            this.cancelCurrentVote()
         })
     }
 
