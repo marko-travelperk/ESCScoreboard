@@ -4,6 +4,10 @@ import NameComponent from "./NameComponent";
 import OngoingRankComponent from "./OngoingRankComponent";
 import ScoreboardComponent from "./ScoreboardComponent";
 import {countryNameMap, countries, rankToPointsMap} from "./constants";
+import VotingComponent from "./VotingComponent";
+import FlipMove from "react-flip-move";
+import VotingButtonComponent from "./VotingButtonComponent";
+import OngoingRankCountryComponent from "./OngoingRankCountryComponent";
 
 class App extends Component {
     constructor(props) {
@@ -16,8 +20,10 @@ class App extends Component {
         this.state = {
             "overallRanking":initial,
             "currentVoting": {},
+            "voters": [],
             "currentVoter": "",
-            "twelves": false
+            "twelves": false,
+            "count": countries.length
         }
         this.eventSource = new EventSource("http://localhost:5000/stream");
     }
@@ -35,6 +41,23 @@ class App extends Component {
         ranking[data.country] = countryVoteList
         this.setState({"currentVoting": currentVotes, "overallRanking": ranking})
     }
+
+    removeVote(data){
+        let currentVotes = this.state.currentVoting
+        let ranking = this.state.overallRanking
+        for (var country in currentVotes){
+            if(currentVotes[country] < currentVotes[data.country]){
+                currentVotes[country]++;
+            }
+        }
+        delete currentVotes[data.country]
+        let countryVoteList = ranking[data.country]
+        countryVoteList.pop()
+
+        this.setState({"currentVoting": currentVotes, "overallRanking": ranking})
+
+    }
+
 
     cancelCurrentVote(){
         let currentVotes = this.state.currentVoting
@@ -54,8 +77,12 @@ class App extends Component {
     }
 
     endvote(){
+        let voters = this.state.voters
+        voters.push(this.state.currentVoter)
         this.setState({
             "currentVoting":{},
+            "voters": voters,
+            "count": countries.length,
             "currentVoter": "Up next..."
         })
     }
@@ -101,6 +128,84 @@ class App extends Component {
         this.setState({"twelves": !this.state.twelves})
     }
 
+    popVote(event){
+        if(!event)
+            return
+        this.removeVote({"country": event})
+        this.state.count++;
+    }
+
+    pushVote(event){
+        if(!event)
+            return
+        console.log("uuu" + event)
+        this.addVote({"country": event, "new_rank": this.state.count})
+        this.state.count--;
+    }
+
+    votingPanel(ranking){
+        var list = []
+        for(var i = 0; i < countries.length; i++) {
+            const country = countries[i]
+            if (!(country in this.state.currentVoting)){
+                list.push(country)
+            }
+        }
+        return(
+            <FlipMove  enterLeaveAnimation="elevator" >
+                {
+                    list.map(
+                        (value, index) => {
+                            console.log(value)
+                            return (
+                                <button value={value} onClick={e => this.pushVote(e.target.value)}> <VotingButtonComponent country={value} key={value}/></button>
+                            )
+                        }
+                    )
+                }
+            </FlipMove>
+        )
+
+    }
+
+    sortDict(dict){
+        // Create items array
+        var items = Object.keys(dict).map(function(key) {
+            return [key, dict[key]];
+        });
+
+        // Sort the array based on the second element
+        items.sort(function(first, second) {
+            return first[1] - second[1];
+        });
+        return items
+    }
+
+    ongoingRank() {
+        const ranked = this.sortDict(this.state.currentVoting)
+        if (!ranked || !ranked.length){
+            return "May we have your votes please?"
+        }
+        return(
+            <span>
+            <FlipMove  enterLeaveAnimation="elevator" >
+                {
+                    ranked.map(
+                        (value, index) => {
+                            return (
+                                <button value={value[0]}  onClick={ e => this.popVote(e.target.value)} ><OngoingRankCountryComponent country={value[0]} rank={value[1]} key={value[0]}/></button>
+                            )
+                        }
+                    )
+                }
+            </FlipMove>
+                <button onClick={this.endvote.bind(this)}>Submit</button>
+            </span>
+        )
+    }
+
+
+
     render() {
         console.log(this.state.overallRanking)
     return (
@@ -114,12 +219,24 @@ class App extends Component {
           <div className={"Voting"}>
             <NameComponent voterName={this.state.currentVoter}/>
             <div className={"Ranking"}>
-                <OngoingRankComponent ranking={this.state.currentVoting} />
+                {this.ongoingRank()}
             </div>
           </div>
           <div className={"Buttons"}>
-            {/* <button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button> */}
-            <button className={"Button Button--12"} onClick={this.switchTwelveState.bind(this)}>{this.state.twelves ? "Use Ranking" :  "Use 12p system"  }</button>
+            <button className={"Button Button--random"} onClick={this.addRandomVote.bind(this)}>Random vote</button>
+            <button className={"Button Button--12"} onClick={this.switchTwelveState.bind(this)}>{this.state.twelves ? "Use Ranking" :  "Use 12p system" }</button>
+          </div>
+          <div className={"VotingButtons"}>
+              {this.votingPanel()}
+          </div>
+          <div>
+              {["Marko", "Ed", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "Wiv", "Hlynur", "Aivis"].map(
+                  name => {
+                      return(
+                          <button value={name} onClick={e=> this.setState({"currentVoter": e.target.value})}>{name}</button>
+                      )
+                  }
+              )}
           </div>
       </div>
     );

@@ -8,6 +8,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("img/we-are-one.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: "Tahoma", sans-serif;
   background-color: #111;
   overflow: hidden; }
@@ -27,10 +31,11 @@ body {
   transition: .4s ease;
   font-family: "Gotham";
   text-transform: uppercase; }
-  .Button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #1e1e1e; }
+
+.Button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #1e1e1e; }
 
 .App {
   padding: 48px 48px;
@@ -43,7 +48,7 @@ body {
   background-position: center;
   height: 100vh;
   align-items: center;
-  grid-template-areas: "logo votes" "scoreboard votes" "footer votes"; }
+  grid-template-areas: "logo votes" "scoreboard votes" "footer votes" "votingbuttons votes"; }
 
 .Logo {
   grid-area: logo;
@@ -67,41 +72,63 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-  .country--small {
-    position: relative;
-    font-size: 14px;
-    padding: 2px 8px;
-    margin: 0 0 8px;
-    min-width: 326px; }
-    .country--small .country__flag {
-      float: none;
-      margin-left: 0;
-      border-left: 0; }
-      .country--small .country__flag img {
-        width: 22px;
-        height: 18px; }
-  .country__rank {
-    width: 32px;
-    margin-right: 16px;
-    text-align: center; }
-  .country__flag {
-    margin-right: 16px; }
-    .country__flag img {
-      display: block;
-      width: 22px;
-      height: 24px; }
-  .country__average {
-    margin-left: auto;
-    text-align: right;
-    margin-right: 16px; }
+
+.country--small {
+  position: relative;
+  font-size: 14px;
+  padding: 2px 8px;
+  margin: 0 0 8px;
+  min-width: 326px; }
+
+.country--small .country__flag {
+  float: none;
+  margin-left: 0;
+  border-left: 0; }
+
+.country--small .country__flag img {
+  width: 22px;
+  height: 18px; }
+
+.country--tiny {
+  position: relative;
+  font-size: 8px;
+  padding: 2px 8px;
+  margin: 0 0 2px;
+  min-width: 100px; }
+
+.country--tiny .country__flag img {
+  width: 22px;
+  height: 18px; }
+
+.country:not(.country--small):nth-of-type(-n+10) {
+  background-color: #1a3a41; }
+
+.country__rank {
+  width: 32px;
+  margin-right: 16px;
+  text-align: center; }
+
+.country__flag {
+  margin-right: 16px; }
+
+.country__flag img {
+  display: block;
+  width: 22px;
+  height: 24px; }
+
+.country__average {
+  margin-left: auto;
+  text-align: right;
+  margin-right: 16px; }
 
 .Scoreboard {
   grid-area: scoreboard;
   border-right: 0;
   width: 100%;
   padding: 0; }
-  .Scoreboard > div {
-    columns: 2; }
+
+.Scoreboard > div {
+  columns: 2; }
 
 .Voting {
   grid-area: votes;
@@ -111,33 +138,35 @@ body {
   position: relative;
   min-height: 68vh;
   min-width: calc(326px + 24px + 24px); }
-  .Voting h1 {
-    text-align: center;
-    display: block;
-    color: #030076;
-    position: relative;
-    padding: 16px 0 16px 56px;
-    text-transform: uppercase;
-    height: 72px;
-    font-size: 28px;
-    margin-bottom: 24px;
-    background-image: url("img/splash.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative; }
-    .Voting h1:before {
-      content: "";
-      display: block;
-      width: 128px;
-      height: 128px;
-      background-image: url("img/treble.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: -32px;
-      left: 16px; }
+
+.Voting h1 {
+  text-align: center;
+  display: block;
+  color: #030076;
+  position: relative;
+  padding: 16px 0 16px 56px;
+  text-transform: uppercase;
+  height: 72px;
+  font-size: 28px;
+  margin-bottom: 24px;
+  background-image: url("img/splash.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative; }
+
+.Voting h1:before {
+  content: "";
+  display: block;
+  width: 128px;
+  height: 128px;
+  background-image: url("img/treble.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -32px;
+  left: 16px; }
 
 .Buttons {
   grid-area: footer; }
@@ -146,3 +175,11 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+
+.VotingButtons {
+  grid-area: votingbuttons;
+  width: 100%;
+  padding: 0 36px; }
+
+.VotingButtons > div {
+  columns: 7; }

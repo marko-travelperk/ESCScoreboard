@@ -12,6 +12,10 @@ $color-primary: #111;
 body {
   margin: 0;
   padding: 0;
+  background-image: url("img/we-are-one.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: "Tahoma", sans-serif;
   background-color: #111;
   overflow: hidden;
@@ -55,7 +59,8 @@ body {
   grid-template-areas:
     "logo votes"
     "scoreboard votes"
-    "footer votes";
+    "footer votes"
+    "votingbuttons votes";
 }
 
 .Logo {
@@ -100,6 +105,27 @@ body {
       }
     }
   }
+
+  &--tiny {
+    position: relative;
+    font-size: 8px;
+    padding: 2px 8px;
+    margin: 0 0 2px;
+    min-width: 100px;
+
+    .country {
+      &__flag {
+        img {
+          width: 22px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  &:not(&--small):nth-of-type(-n+10) {
+    background-color: #1a3a41;
+  }
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -111,7 +137,7 @@ body {
   }
 
   &__name {
-    
+
   }
 
   &__flag {
@@ -189,4 +215,15 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+
+.VotingButtons {
+  grid-area: votingbuttons;
+  width: 100%;
+  padding: 0 36px;
+
+  >div {
+    columns: 7;
+  }
 }
