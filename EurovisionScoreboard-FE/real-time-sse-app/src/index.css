@@ -9,11 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gotham", sans-serif;
-  background-color: white;
-  background-image: url("img/we-are-one.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #111;
   overflow: hidden; }
 
 .Buttons {
@@ -31,13 +27,14 @@ body {
   transition: .4s ease;
   font-family: "Gotham";
   text-transform: uppercase; }
-  .Button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #1e1e1e; }
+
+.Button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #1e1e1e; }
 
 .App {
-  padding: 48px 280px;
+  padding: 48px 48px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 240px auto 156px;
@@ -60,78 +57,79 @@ body {
   break-inside: avoid;
   text-transform: uppercase;
   position: relative;
-  background-image: radial-gradient(circle at bottom, #0f242a, transparent);
-  background-size: 100% 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-  .country:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
-  .country--small {
-    position: relative;
-    font-size: 12px;
-    padding: 2px 8px;
-    margin: 0 0 2px;
-    min-width: 326px; }
-    .country--small .country__flag img {
-      width: 22px;
-      height: 18px; }
-  .country:not(.country--small):nth-of-type(-n+10) {
-    background-color: #1a3a41; }
-  .country__rank {
-    width: 32px;
-    margin-right: 16px;
-    text-align: center; }
-  .country__name {
-    padding: 4px;
-    color: white; }
-  .country__flag {
-    margin-right: 16px; }
-    .country__flag img {
-      display: block;
-      width: 28px;
-      height: 24px; }
-  .country__average {
-    margin-left: auto;
-    font-size: 16px; }
+
+.country:nth-child(-n+9) {
+  border-right: 4px solid white; }
+
+.country--small {
+  position: relative;
+  font-size: 12px;
+  padding: 2px 8px;
+  margin: 0 0 2px;
+  min-width: 326px;
+  border-right: 0 !important; }
+
+.country--small .country__flag img {
+  width: 22px;
+  height: 18px; }
+
+.country__rank {
+  width: 32px;
+  margin-right: 16px;
+  text-align: center; }
+
+.country__name {
+  padding: 4px;
+  color: white; }
+
+.country__flag {
+  margin-right: 16px;
+  filter: grayscale(100%); }
+
+.country__flag img {
+  display: block;
+  width: 28px;
+  height: 24px; }
+
+.country__average {
+  margin-left: auto;
+  font-size: 16px; }
 
 .Scoreboard {
   grid-area: scoreboard;
+  border: 4px solid white;
+  border-right: 0;
   width: 100%;
-  padding: 0 36px; }
-  .Scoreboard > div {
-    columns: 2; }
+  padding: 0; }
+
+.Scoreboard > div {
+  columns: 2;
+  column-gap: 0; }
 
 .Voting {
   grid-area: votes;
+  padding: 12px 24px;
+  border: 4px solid white;
   width: 100%;
   color: white;
-  position: relative; }
-  .Voting h1 {
-    text-align: center;
-    display: block;
-    color: white;
-    position: relative;
-    padding: 8px 0;
-    text-transform: uppercase;
-    font-size: 18px;
-    background-image: radial-gradient(circle at bottom, #2d535c 0%, transparent 66%); }
-    .Voting h1:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
+  position: relative;
+  min-height: 68vh;
+  min-width: calc(326px + 24px + 24px); }
+
+.Voting h1 {
+  text-align: center;
+  display: block;
+  color: black;
+  position: relative;
+  padding: 8px 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  background-color: white; }
 
 .Buttons {
   grid-area: footer; }
