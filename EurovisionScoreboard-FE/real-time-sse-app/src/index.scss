@@ -3,6 +3,16 @@
   src: url('fonts/Gotham-Medium.otf');
 }
 
+@font-face {
+  font-family: 'Digii';
+  src: url('fonts/Digii.TTF');
+}
+
+@font-face {
+  font-family: 'Korina';
+  src: url('fonts/Korina.otf');
+}
+
 $color-primary: #111;
 
 * {
@@ -12,7 +22,7 @@ $color-primary: #111;
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gotham", sans-serif;
+  font-family: "Korina", sans-serif;
   background-color: #111;
   overflow: hidden;
 }
@@ -63,19 +73,14 @@ body {
   text-align: left;
   flex-grow: 1;
   color: white;
-  margin: 0;
-  padding: 5px 8px 5px 8px;
+  margin: 0 8px 8px 0;
+  padding: 0;
   width: 100%;
-  font-size: 16px;
+  font-size: 24px;
   break-inside: avoid;
   text-transform: uppercase;
   position: relative;
-  border-bottom: 1px solid rgba(white, 0.2);
-  border-right: 1px solid rgba(white, 0.2);
-  
-  &:nth-child(-n+9) {
-    border-right: 4px solid white;
-  }
+  border: 2px solid beige;
 
   &--small {
     position: relative;
@@ -102,16 +107,15 @@ body {
     width: 32px;
     margin-right: 16px;
     text-align: center;
+    font-family: "Digii";
   }
 
   &__name {
-    padding: 4px;
     color: white;
   }
 
   &__flag {
     margin-right: 16px;
-    filter: grayscale(100%);
 
     img {
       display: block;
@@ -122,7 +126,8 @@ body {
 
   &__average {
     margin-left: auto;
-    font-size: 16px;
+    font-size: 28px;
+    font-family: "Digii";
   }
 }
 
@@ -135,7 +140,6 @@ body {
 
   >div {
     columns: 2;
-    column-gap: 0;
   }
 }
 
