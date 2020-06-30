@@ -57,30 +57,38 @@ body {
 .country {
   text-align: left;
   flex-grow: 1;
-  color: white;
-  margin: 0 8px 8px 0;
-  padding: 0;
+  color: #a8ab9f;
+  background-color: #0a110c;
+  margin: 0 16px 16px 0;
+  padding: 0 8px;
   width: 100%;
   font-size: 24px;
   break-inside: avoid;
   text-transform: uppercase;
   position: relative;
-  border: 2px solid beige;
+  border: 2px solid #cfc5a4;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
 
 .country--small {
   position: relative;
-  font-size: 12px;
-  padding: 2px 8px;
-  margin: 0 0 2px;
-  min-width: 326px;
-  border-right: 0 !important; }
+  font-size: 14px;
+  padding: 4px 8px;
+  margin: 0 0 8px;
+  min-width: 326px; }
+
+.country--small .country__flag {
+  float: none;
+  margin-left: 0;
+  border-left: 0; }
 
 .country--small .country__flag img {
   width: 22px;
   height: 18px; }
+
+.country--small .country__rank {
+  font-family: "Korina"; }
 
 .country__rank {
   width: 32px;
@@ -88,25 +96,27 @@ body {
   text-align: center;
   font-family: "Digii"; }
 
-.country__name {
-  color: white; }
-
 .country__flag {
-  margin-right: 16px; }
+  margin-left: auto;
+  margin-right: 16px;
+  float: right;
+  border-left: 2px solid #cfc5a4;
+  padding-left: 8px; }
 
 .country__flag img {
   display: block;
   width: 28px;
-  height: 24px; }
+  height: 34px; }
 
 .country__average {
-  margin-left: auto;
   font-size: 28px;
-  font-family: "Digii"; }
+  font-family: "Digii";
+  width: 56px;
+  text-align: right;
+  color: #00d0dc; }
 
 .Scoreboard {
   grid-area: scoreboard;
-  border: 4px solid white;
   border-right: 0;
   width: 100%;
   padding: 0; }
@@ -117,7 +127,6 @@ body {
 .Voting {
   grid-area: votes;
   padding: 12px 24px;
-  border: 4px solid white;
   width: 100%;
   color: white;
   position: relative;
@@ -127,12 +136,12 @@ body {
 .Voting h1 {
   text-align: center;
   display: block;
-  color: black;
+  color: #faf7cc;
   position: relative;
-  padding: 8px 0;
+  padding: 0;
   text-transform: uppercase;
-  font-size: 18px;
-  background-color: white; }
+  font-size: 48px;
+  margin-bottom: 24px; }
 
 .Buttons {
   grid-area: footer; }
