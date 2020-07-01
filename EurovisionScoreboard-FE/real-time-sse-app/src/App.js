@@ -202,7 +202,7 @@ class App extends Component {
                     ranked.map(
                         (value, index) => {
                             return (
-                                <span key={value[1]}><button key={value[1]} value={value[0]}  onClick={ e => this.popVote(e.target.value)} ><OngoingRankCountryComponent country={value[0]} rank={value[1]}/></button></span>
+                                <span key={value[0]}><button key={value[0]} value={value[0]}  onClick={ e => this.popVote(e.target.value)} ><OngoingRankCountryComponent country={value[0]} rank={value[1]}/></button></span>
                             )
                         }
                     )
@@ -253,7 +253,7 @@ class App extends Component {
           </div>
           <button onClick={e => {
               let content = []
-              content.push("country")
+              content.push("country,")
               content.push(this.state.voters)
               content.push("\n")
 
@@ -263,8 +263,8 @@ class App extends Component {
                   line.push("\n")
                   content.push(line)
               }
-              saveAs(new Blob(content, {type: "text/csv;charset=utf-8"}), "test.txt")}
-          }>Save file</button>
+              saveAs(new Blob(content, {type: "text/csv;charset=utf-8"}), "test.txt")
+          }}>Save file</button>
       </div>
     );
   }
