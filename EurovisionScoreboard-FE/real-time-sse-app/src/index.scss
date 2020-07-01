@@ -3,16 +3,6 @@
   src: url('fonts/Gotham-Medium.otf');
 }
 
-@font-face {
-  font-family: 'Digii';
-  src: url('fonts/Digii.TTF');
-}
-
-@font-face {
-  font-family: 'Korina';
-  src: url('fonts/Korina.otf');
-}
-
 $color-primary: #111;
 
 * {
@@ -22,7 +12,7 @@ $color-primary: #111;
 body {
   margin: 0;
   padding: 0;
-  font-family: "Korina", sans-serif;
+  font-family: "Tahoma", sans-serif;
   background-color: #111;
   overflow: hidden;
 }
@@ -32,14 +22,14 @@ body {
 }
 
 .Button {
-  background: white;
+  background: #930005;
+  color: white;
   border: 0;
   display: inline-block;
   margin-left: 16px;
   padding: 8px 12px;
   font-weight: 700;
   border-radius: 240px;
-  color: $color-primary;
   transition: .4s ease;
   font-family: "Gotham";
   text-transform: uppercase;
@@ -56,6 +46,10 @@ body {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 240px auto 156px;
+  background-image: url("img/confluence.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
   height: 100vh;
   align-items: center;
   grid-template-areas:
@@ -72,21 +66,23 @@ body {
 .country {
   text-align: left;
   flex-grow: 1;
-  color: #a8ab9f;
-  background-color: #0a110c;
-  margin: 0 16px 16px 0;
-  padding: 0 8px;
+  color: #030076;
+  background-image: linear-gradient(to right, #e4f2fa 0%, #e4f2fa 85%, transparent 100%);
+  margin: 0 32px 12px 0;
+  padding: 1px 32px 1px 8px;
   width: 100%;
-  font-size: 24px;
+  font-size: 22px;
   break-inside: avoid;
   text-transform: uppercase;
   position: relative;
-  border: 2px solid #cfc5a4;
+  font-weight: 700;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .2);
+  border-radius: 2px 0 0 2px;
 
   &--small {
     position: relative;
     font-size: 14px;
-    padding: 4px 8px;
+    padding: 2px 8px;
     margin: 0 0 8px;
     min-width: 326px;
 
@@ -101,7 +97,6 @@ body {
         }
       }
       &__rank {
-        font-family: "Korina";
       }
     }
   }
@@ -113,7 +108,6 @@ body {
     width: 32px;
     margin-right: 16px;
     text-align: center;
-    font-family: "Digii";
   }
 
   &__name {
@@ -121,25 +115,19 @@ body {
   }
 
   &__flag {
-    margin-left: auto;
     margin-right: 16px;
-    float: right;
-    border-left: 2px solid #cfc5a4;
-    padding-left: 8px;
 
     img {
       display: block;
-      width: 28px;
-      height: 34px;
+      width: 22px;
+      height: 24px;
     }
   }
 
   &__average {
-    font-size: 28px;
-    font-family: "Digii";
-    width: 56px;
+    margin-left: auto;
     text-align: right;
-    color: #00d0dc;
+    margin-right: 16px;
   }
 }
 
@@ -165,12 +153,31 @@ body {
   h1 {
     text-align: center;
     display: block;
-    color: #faf7cc;
+    color: #030076;
     position: relative;
-    padding: 0;
+    padding: 16px 0 16px 56px;
     text-transform: uppercase;
-    font-size: 48px;
+    height: 72px;
+    font-size: 28px;
     margin-bottom: 24px;
+    background-image: url("img/splash.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 128px;
+      height: 128px;
+      background-image: url("img/treble.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -32px;
+      left: 16px;
+    }
   }
 }
 
