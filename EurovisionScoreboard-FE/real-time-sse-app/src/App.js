@@ -3,11 +3,12 @@ import './App.css';
 import NameComponent from "./NameComponent";
 import OngoingRankComponent from "./OngoingRankComponent";
 import ScoreboardComponent from "./ScoreboardComponent";
-import {countryNameMap, countries, rankToPointsMap} from "./constants";
+import {countryNameMap, countries, rankToPointsMap, all_voters} from "./constants";
 import VotingComponent from "./VotingComponent";
 import FlipMove from "react-flip-move";
 import VotingButtonComponent from "./VotingButtonComponent";
 import OngoingRankCountryComponent from "./OngoingRankCountryComponent";
+import { saveAs } from 'file-saver';
 
 class App extends Component {
     constructor(props) {
@@ -23,7 +24,8 @@ class App extends Component {
             "voters": [],
             "currentVoter": "",
             "twelves": false,
-            "count": countries.length
+            "count": countries.length,
+            "remainingVoters": all_voters
         }
         this.eventSource = new EventSource("http://localhost:5000/stream");
     }
@@ -79,11 +81,19 @@ class App extends Component {
     endvote(){
         let voters = this.state.voters
         voters.push(this.state.currentVoter)
+        let remaining = []
+        for (let i = 0; i < this.state.remainingVoters.length; i++) {
+            if (this.state.remainingVoters[i] !== this.state.currentVoter) {
+                remaining.push(this.state.remainingVoters[i])
+            }
+        }
+
         this.setState({
             "currentVoting":{},
             "voters": voters,
             "count": countries.length,
             "currentVoter": "Up next..."
+            "remainingVoters": remaining
         })
     }
 
@@ -156,9 +166,8 @@ class App extends Component {
                 {
                     list.map(
                         (value, index) => {
-                            console.log(value)
                             return (
-                                <button value={value} onClick={e => this.pushVote(e.target.value)}> <VotingButtonComponent country={value} key={value}/></button>
+                                <span key={value}><button key={value} value={value} onClick={e => this.pushVote(e.target.value)}> <VotingButtonComponent country={value} key={value}/></button></span>
                             )
                         }
                     )
@@ -193,7 +202,7 @@ class App extends Component {
                     ranked.map(
                         (value, index) => {
                             return (
-                                <button value={value[0]}  onClick={ e => this.popVote(e.target.value)} ><OngoingRankCountryComponent country={value[0]} rank={value[1]} key={value[0]}/></button>
+                                <span key={value[1]}><button key={value[1]} value={value[0]}  onClick={ e => this.popVote(e.target.value)} ><OngoingRankCountryComponent country={value[0]} rank={value[1]}/></button></span>
                             )
                         }
                     )
@@ -204,6 +213,10 @@ class App extends Component {
         )
     }
 
+    capitalizeWords(str)
+    {
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
 
 
     render() {
@@ -230,7 +243,7 @@ class App extends Component {
               {this.votingPanel()}
           </div>
           <div>
-              {["Marko", "Ed", "Rinor", "Luke", "Simon", "Matteo", "Costa", "Rodrigo", "Pedro", "Vladan", "Philip", "Oliver", "Thomas", "Nathan", "Wiv", "Hlynur", "Aivis"].map(
+              {this.state.remainingVoters.map(
                   name => {
                       return(
                           <button value={name} onClick={e=> this.setState({"currentVoter": e.target.value})}>{name}</button>
@@ -238,6 +251,20 @@ class App extends Component {
                   }
               )}
           </div>
+          <button onClick={e => {
+              let content = []
+              content.push("country")
+              content.push(this.state.voters)
+              content.push("\n")
+
+              for (var country in this.state.overallRanking){
+                  var line = [this.capitalizeWords(country)]
+                  line.push(this.state.overallRanking[country])
+                  line.push("\n")
+                  content.push(line)
+              }
+              saveAs(new Blob(content, {type: "text/csv;charset=utf-8"}), "test.txt")}
+          }>Save file</button>
       </div>
     );
   }
