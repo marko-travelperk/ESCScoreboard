@@ -45,7 +45,7 @@ class App extends Component {
         this.setState({
             "overallRanking": ranking,
             "currentVoting":{},
-            "currentVoter": "And now we go to..."
+            "currentVoter": "Up next..."
         })
     }
 
@@ -56,7 +56,7 @@ class App extends Component {
     endvote(){
         this.setState({
             "currentVoting":{},
-            "currentVoter": "And now we go to..."
+            "currentVoter": "Up next..."
         })
     }
 

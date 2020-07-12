@@ -1,16 +1,11 @@
-@font-face {
-  font-family: 'Gotham';
-  src: url("fonts/Gotham-Medium.otf"); }
-
 * {
   box-sizing: border-box; }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gotham", sans-serif;
-  background-color: white;
-  background-image: url("img/we-are-one.jpg");
+  font-family: "Arial", sans-serif;
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,15 +24,18 @@ body {
   border-radius: 240px;
   color: #111;
   transition: .4s ease;
-  font-family: "Gotham";
+  font-family: "Arial";
+  font-weight: 700;
   text-transform: uppercase; }
-  .Button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #1e1e1e; }
+
+.Button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #1e1e1e; }
 
 .App {
-  padding: 48px 280px;
+  background-image: linear-gradient(-45deg, #0054c0 0%, #000e25 33%, #33000d 50%, #010038 66%, #0056c7 100%);
+  padding: 48px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 240px auto 156px;
@@ -53,85 +51,97 @@ body {
   text-align: left;
   flex-grow: 1;
   color: white;
-  margin: 0;
-  padding: 5px 8px 5px 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 0 0 8px 0;
+  padding: 0 8px;
   width: 100%;
-  font-size: 16px;
+  font-size: 24px;
   break-inside: avoid;
-  text-transform: uppercase;
   position: relative;
-  background-image: radial-gradient(circle at bottom, #0f242a, transparent);
-  background-size: 100% 24px;
+  font-weight: 500;
   display: flex;
   flex-flow: row nowrap;
   align-items: center; }
-  .country:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
-  .country--small {
-    position: relative;
-    font-size: 12px;
-    padding: 2px 8px;
-    margin: 0 0 2px;
-    min-width: 326px; }
-    .country--small .country__flag img {
-      width: 22px;
-      height: 18px; }
-  .country:not(.country--small):nth-of-type(-n+10) {
-    background-color: #1a3a41; }
-  .country__rank {
-    width: 32px;
-    margin-right: 16px;
-    text-align: center; }
-  .country__name {
-    padding: 4px;
-    color: white; }
-  .country__flag {
-    margin-right: 16px; }
-    .country__flag img {
-      display: block;
-      width: 28px;
-      height: 24px; }
-  .country__average {
-    margin-left: auto;
-    font-size: 16px; }
+
+.country--small {
+  position: relative;
+  padding: 0 8px;
+  margin: 0 0 4px;
+  min-width: 326px;
+  text-shadow: 2px 2px black;
+  font-size: 16px; }
+
+.country--small .country__flag img {
+  width: 32px;
+  height: 28px; }
+
+.country--small .country__rank {
+  font-weight: 700;
+  transform: scale(1.33, 1);
+  transform-origin: 0 0; }
+
+.country__rank {
+  width: 40px;
+  margin-right: 16px;
+  text-align: center;
+  padding: 4px 8px 4px 0;
+  transform: scale(1.33, 1);
+  transform-origin: 0 0; }
+
+.country__name {
+  display: inline-block;
+  padding: 0 4px;
+  text-align: left;
+  transform: scale(1.33, 1);
+  transform-origin: 0 0; }
+
+.country__flag {
+  margin-right: 8px; }
+
+.country__flag img {
+  display: block;
+  width: 48px;
+  height: 36px; }
+
+.country__average {
+  margin-left: auto;
+  text-align: right;
+  padding-right: 16px;
+  padding: 5px 8px;
+  min-width: 128px;
+  font-family: "Arial";
+  font-weight: 900;
+  color: white;
+  font-size: 28px; }
 
 .Scoreboard {
   grid-area: scoreboard;
   width: 100%;
   padding: 0 36px; }
-  .Scoreboard > div {
-    columns: 2; }
+
+.Scoreboard > div {
+  columns: 2; }
 
 .Voting {
   grid-area: votes;
   width: 100%;
   color: white;
-  position: relative; }
-  .Voting h1 {
-    text-align: center;
-    display: block;
-    color: white;
-    position: relative;
-    padding: 8px 0;
-    text-transform: uppercase;
-    font-size: 18px;
-    background-image: radial-gradient(circle at bottom, #2d535c 0%, transparent 66%); }
-    .Voting h1:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to right, #051920 0%, #425f65 50%, #051920 100%); }
+  position: relative;
+  font-size: 24px;
+  height: 75vh; }
+
+.Voting h1 {
+  text-align: center;
+  display: block;
+  color: white;
+  position: relative;
+  padding: 8px 0;
+  transform: scale(1.33, 1);
+  transform-origin: 0, 0;
+  font-size: 48px;
+  font-weight: 400; }
 
 .Buttons {
   grid-area: footer; }
@@ -140,3 +150,6 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+
+.Ranking > div {
+  width: 100%; }
